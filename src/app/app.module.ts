@@ -13,21 +13,27 @@ import { AppComponent }                       from './app.component';
 import { ModalService }                       from './services/modal.service';
 import { DomService }                         from './services/dom.service';
 
+/****** PIPES *************************************************************/
+import { FilterPipe }                         from './pipes/filter.pipe';
+
 /****** OWN-COMPONENTs *****************************************************/
 import { BeartCheckboxComponent } from './ui-elements/beart-checkbox/beart-checkbox.component';
 import { BeartModalComponent } from './ui-elements/beart-modal/beart-modal.component';
 import { BeartPiechartComponent } from './ui-elements/beart-piechart/beart-piechart.component';
 import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart-progressbar.component';
 import { BeartRadiobuttonComponent } from './ui-elements/beart-radiobutton/beart-radiobutton.component';
+import { BeartSearchComponent } from './ui-elements/beart-search/beart-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FilterPipe,
     BeartCheckboxComponent,
     BeartModalComponent,
     BeartPiechartComponent,
     BeartProgressbarComponent,
-    BeartRadiobuttonComponent
+    BeartRadiobuttonComponent,
+    BeartSearchComponent
   ],
   imports: [
     BrowserModule,

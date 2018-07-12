@@ -1,0 +1,39 @@
+@import "variables";
+
+/* SEARCH
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+form.erasable-search {
+    position: relative;
+    input[type="search"] {
+        width: 100%; // border: none;
+        border-radius: $global-radius;
+        background-color: $white;
+    }
+    button {
+        position: absolute;
+        width: 18px;
+        padding: 0;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        &:focus {
+            svg-icon {
+                fill: $primary;
+            }
+        }
+        svg-icon {
+            width: 100%;
+            fill: $anthracite;
+            &.erase-icon {
+                width: 12px;
+            }
+            svg {
+                vertical-align: middle;
+            }
+        }
+    }
+}

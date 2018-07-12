@@ -1,0 +1,12 @@
+<form class="erasable-search">
+    <input
+        type="search"
+        name="focus"
+        placeholder="{{placeholder}}"
+        [(ngModel)]="_mySearch"
+        (ngModelChange)="checkSearchEmpty()"  />
+    <button type="reset">
+        <svg-icon *ngIf="!_mySearch" class="search-icon" src="assets/gfx/search-icon.svg"></svg-icon>
+        <svg-icon *ngIf="_mySearch" class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon>
+    </button>
+</form>
