@@ -1,0 +1,12 @@
+<div class="modal-container">
+  <h2 class="modal--headline">This is the sample modal</h2>
+  <div class="modal--content">
+    <beart-video
+      [videoId]="'video'"
+      [isMuted]="true"
+      [videoItems] = "[ 'assets/videos/test.mp4' ]"></beart-video>
+  </div>
+  <div class="sample-close">
+    <button (click)="close()">Close Modal</button>
+  </div>
+</div>
