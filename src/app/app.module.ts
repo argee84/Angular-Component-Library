@@ -16,6 +16,11 @@ import { DomService }                         from './services/dom.service';
 /****** PIPES *************************************************************/
 import { FilterPipe }                         from './pipes/filter.pipe';
 
+/****** ADD-ONs ***********************************************************/
+import { ToastrModule }                       from 'ngx-toastr';
+import { AngularSvgIconModule }               from 'angular-svg-icon';
+import { StarRatingModule }                   from 'angular-star-rating';
+
 /****** OWN-COMPONENTs *****************************************************/
 import { BeartCheckboxComponent } from './ui-elements/beart-checkbox/beart-checkbox.component';
 import { BeartModalComponent } from './ui-elements/beart-modal/beart-modal.component';
@@ -47,7 +52,16 @@ import { BeartVideoComponent } from './ui-elements/beart-video/beart-video.compo
     FormsModule,
     HttpClientModule,
     HttpModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right',
+      newestOnTop: false,
+    }), // ToastrModule added
+    AngularSvgIconModule, // SVG Icon added
+    StarRatingModule.forRoot(), // StarRating added
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
+  ],
+  entryComponents:[
+    BeartModalComponent,
   ],
   providers: [
     ModalService,
