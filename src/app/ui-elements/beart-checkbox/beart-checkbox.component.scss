@@ -1,0 +1,70 @@
+@import "variables";
+
+/* CHECKBOX
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+%checkmark-style {
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    transform: rotate(-45deg);
+}
+
+$checkbox-width: 20px;
+
+.checkbox-container {
+    display: flex;
+    &.disabled {
+      @extend %disabled;
+    }
+    .checkbox {
+        width: $checkbox-width;
+        position: relative;
+        display: inline-block;
+        input[type=checkbox] {
+            visibility: hidden;
+            &:checked+label:after {
+                opacity: 1;
+                @extend %border-style;
+                border-color: $white;
+                @extend %checkmark-style;
+            }
+            &:checked+label {
+                border: 2px solid $primary;
+                background-color: $primary;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+        label {
+            width: $checkbox-width;
+            height: $checkbox-width;
+            cursor: pointer;
+            position: absolute;
+            top: 2px;
+            left: 0;
+            background-color: transparent;
+            border-radius: 4px;
+            @extend %border-style;
+            border-color: $grey;
+            &:after {
+                content: '';
+                width: 9px;
+                height: 5px;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                opacity: 0;
+                @extend %border-style;
+                border-color: $grey;
+                @extend %checkmark-style;
+            }
+            &:hover::after {
+                opacity: 0.5;
+            }
+        }
+    }
+    p {
+      @extend %label-spacing;
+    }
+}

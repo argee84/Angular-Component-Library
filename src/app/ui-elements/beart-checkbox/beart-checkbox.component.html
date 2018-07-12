@@ -1,0 +1,15 @@
+<div
+    class="checkbox-container"
+    [ngClass]="{'disabled': isDisabled}">
+
+    <div class="checkbox">
+        <input
+            id="{{checkBoxId}}"
+            type="checkbox"
+            [disabled]="isDisabled"
+            [checked]="isChecked"
+            (click)="changeChecked()">
+        <label for="{{checkBoxId}}"></label>
+    </div>
+    <p><ng-content></ng-content></p>
+</div>
