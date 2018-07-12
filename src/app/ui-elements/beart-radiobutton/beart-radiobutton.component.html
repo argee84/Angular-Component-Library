@@ -1,0 +1,17 @@
+<div
+    class="radiobutton-container"
+    [ngClass]="{'disabled': isDisabled}">
+
+    <div class="radiobutton">
+        <input
+            id="{{radioButtonId}}"
+            type="radio"
+            name="{{radioButtonGroup}}"
+            value="{{radioButtonValue}}"
+            [disabled]="isDisabled"
+            [checked]="isSelected"
+            (click)="changeSelected()">
+        <label for="{{radioButtonId}}"></label>
+    </div>
+    <p><ng-content></ng-content></p>
+</div>

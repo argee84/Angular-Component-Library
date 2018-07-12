@@ -18,6 +18,7 @@ import { BeartCheckboxComponent } from './ui-elements/beart-checkbox/beart-check
 import { BeartModalComponent } from './ui-elements/beart-modal/beart-modal.component';
 import { BeartPiechartComponent } from './ui-elements/beart-piechart/beart-piechart.component';
 import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart-progressbar.component';
+import { BeartRadiobuttonComponent } from './ui-elements/beart-radiobutton/beart-radiobutton.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart
     BeartCheckboxComponent,
     BeartModalComponent,
     BeartPiechartComponent,
-    BeartProgressbarComponent
+    BeartProgressbarComponent,
+    BeartRadiobuttonComponent
   ],
   imports: [
     BrowserModule,
