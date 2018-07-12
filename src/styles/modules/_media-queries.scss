@@ -1,0 +1,58 @@
+// Media Queries
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Note: The best way to structure the use of media queries is to create the queries
+// near the relevant code. For example, if you wanted to change the styles for buttons
+// on small devices, paste the mobile query code up in the buttons section and style it
+// there.
+
+// mobile
+@media (#{$bp-mobile}) {}
+
+// Larger than mobile
+@media (#{$bp-larger-than-mobile}) {}
+
+// Larger than phablet (also point when grid becomes active)
+@media (#{$bp-larger-than-phablet}) {}
+
+// Larger than tablet
+@media (#{$bp-larger-than-tablet}) {
+    /*********************
+    * SCROLLBAR
+    *********************/
+    // main {
+    //     overflow-y: hidden;
+    // }
+
+    ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+    background-color: $alphaanthracite;
+    border-radius: 0;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background-color: $anthracite;
+    border-radius: 0;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+    }
+    
+    .content-wrapper {
+        flex-direction: row;
+        
+        margin-top: 120px;
+        padding-top: 0;
+    }
+}
+
+// Larger than desktop
+@media (#{$bp-larger-than-desktop}) {}
+
+// Larger than Desktop HD
+@media (#{$bp-larger-than-desktophd}) {}

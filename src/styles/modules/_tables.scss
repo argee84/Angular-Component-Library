@@ -1,0 +1,97 @@
+/* TABLE
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.table-container {
+  background-color: $white;
+  padding: 10px 10px 40px 10px;
+  margin: 10px;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+
+  table {
+    thead,
+    tbody tr {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    thead,
+    tbody {
+      tr td,
+      tr th {
+        &:first-child {
+          width: 37px;
+          padding-left: 10px; 
+        }
+        &:last-child {
+          padding-right: 10px;
+        }
+        &.cell-1 {
+          width: 140px;
+        }
+        &.cell-2 {
+          width: 50%;
+        }
+        &.cell-3 {
+
+        }
+        &.cell-4 {
+
+        }
+      }
+      tr>td,
+      tr>th {
+        padding: 5px 10px;
+      }
+    }
+
+    thead {
+      border-left: 1px solid $softgrey;
+      border-right: 1px solid $softgrey;
+      tr {
+        &:first-child {
+          height: 45px;
+          background-color: $grey;
+          text-align: left;
+        }
+        &:last-child {
+          td:not(:first-child) {
+            padding: 5px;
+          }
+        }
+        td {
+          position: relative;
+          form.erasable-search {
+            width: 100%;
+            input {
+              background-color: $softgrey;
+              box-shadow: none;
+            }
+            button {
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      display: block;
+      max-height: 150px;
+      overflow: auto;
+      overflow: overlay;
+      border: 1px solid $softgrey;
+      tr:not(:last-child) {
+        border-bottom: 1px solid $softgrey;
+      }
+    }
+
+    tr {
+      td {
+        position: relative;
+        height: 55px;
+      }
+    }
+  }
+}

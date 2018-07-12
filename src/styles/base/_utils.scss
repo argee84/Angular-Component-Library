@@ -1,0 +1,35 @@
+/* Utilities
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.align-h-container {
+    display: flex;
+    flex-flow: column wrap;
+    &>*:not(:last-child) {
+        margin-right: 2em;
+    }
+}
+
+@media (#{$bp-larger-than-tablet}) {
+    .align-h-container {
+        flex-flow: row nowrap;
+    }
+}
+
+
+/* NOT FOR REUSE
+* -------------------
+*/
+
+.blue-txt {
+    color: $primary;
+}
+
+#piechart-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#barchart-wrapper {
+    width: 60%;
+}

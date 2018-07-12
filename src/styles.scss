@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* Base files. */
+@import "styles/base/normalize";
+@import "styles/base/variables";
+// @import "styles/base/functions";
+@import "styles/base/general";
+@import "styles/base/utils";
+@import "styles/base/typography";
+
+/* Modules */
+@import "styles/modules/ui-kit";
+@import "styles/modules/grid";
+@import "styles/modules/navbar";
+@import "styles/modules/tabbar";
+@import "styles/modules/buttons";
+@import "styles/modules/forms";
+@import "styles/modules/lists";
+@import "styles/modules/tooltip";
+@import "styles/modules/tables";
+@import "styles/modules/scroll-snap-fix";
+@import "styles/modules/media-queries";
+@import "styles/modules/modal";
+
+/* PlugIns */
+@import "styles/modules/datetime-picker";

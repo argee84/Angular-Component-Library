@@ -1,0 +1,19 @@
+/* GRID
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.grid {
+    width: 100%;
+    margin-bottom: 70px;
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-top: 1px solid $alphablue;
+        border-bottom: 1px solid transparent;
+        &:last-child {
+            border-bottom-color: $alphablue;
+        }
+    }
+}

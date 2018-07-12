@@ -1,0 +1,197 @@
+/* Navbar
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+
+/* start logo container */
+.logo-wrapper {
+  width: 36px;
+  height: 100%;
+  margin-right: auto;
+  cursor: pointer;
+  z-index: 1;
+
+  a.logo {
+    width: 100%;
+    background-color: transparent;
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      background-image: url("/assets/gfx/logo.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+    }
+  }
+}
+/* end logo container*/
+
+/* start navigation */
+nav {
+  width: 100%;
+  height: 78px;
+  padding: 0 2em;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: $anthracite;
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked ~ ul {
+    opacity: 1;
+    height: 100vh;
+    visibility: visible;
+    background-color: $primary;
+    z-index: 95;
+  }
+  
+  .label-toggle {
+    background: linear-gradient(to bottom, transparent 0%, transparent 20%, $primary 20%, $primary 30%, transparent 30%, transparent 50%, $primary 50%, $primary 60%, transparent 60%, transparent 80%, $primary 80%, $primary 90%, transparent 90%, transparent 100%); //Gradient Hamburger
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 35px;
+    margin-top: 1em;
+    width: 35px;
+  }
+
+  ul.nav-container {
+    display: block;
+    width: 100%;
+    height: 0;
+    list-style-type: none;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 1s ease; 
+    visibility: hidden;
+  }
+}
+/* end navigation style */
+
+
+@media (#{$bp-larger-than-tablet}) {
+  /* BORDER RADIUS SETTING */
+  %dropdown-border-radius {
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav {
+    .label-toggle {
+      display: none;
+    }
+    /* start main menu*/
+    ul.nav-container {
+      width: initial;
+      height: initial;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      opacity: 1;
+      transition: none;
+      visibility: visible;
+
+      li {
+        display: block;
+        position: relative;
+        float: left;
+
+        a {
+          display: block;
+          text-align: center;
+          padding: 29px 20px;
+          text-decoration: none;
+          line-height: 20px;
+          white-space: nowrap;
+          color: $white;
+        }
+
+        &:hover,
+        .active {
+          background-color: $primary;
+        }
+
+        /* 2nd level menu */
+        ul {
+          min-width: 160px;
+          // background-color: $anthracite;
+          background-color: transparent;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          // border-top: 1px solid $anthracite;
+          border-top: 1px solid transparent;
+          @extend %dropdown-border-radius;
+          color: $white;
+          z-index: 99;
+
+          &.locations-options {
+            max-height: 250px;
+            overflow-y: auto;
+            overflow-y: overlay;
+          }
+
+          li {
+            width: 100%;
+            background-color: $anthracite;
+
+            a {
+              width: 100%;
+              display: block;
+              padding: 12px 16px;
+              text-decoration: none;
+              text-align: left;
+              color: $white;
+            }
+
+            &:last-child {
+              @extend %dropdown-border-radius;
+            }
+          }
+
+          /* menu scrollbar */
+          &::-webkit-scrollbar-track {
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0);
+            border-radius: 10px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 1);
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    /* hide sub menus*/
+    li ul {
+      display: none;
+    }
+
+    /* display dropdown menu on hover*/
+    li:hover > ul {
+      display: block;
+      position: absolute;
+    }
+
+    /* display 3rd level menu right */
+    ul ul ul,
+    ul ul ul ul {
+      top: 0;
+      right: 100%;
+    }
+
+    /* simple clearfix */
+    ul::before,
+    ul::after {
+      content: "";
+      display: table;
+    }
+
+    ul::after {
+      clear: both;
+    }
+
+    /* end main menu*/
+  }
+}

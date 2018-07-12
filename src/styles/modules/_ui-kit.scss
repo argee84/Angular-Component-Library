@@ -1,0 +1,25 @@
+/* ANKER
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+a {
+  color: $primary-font-color;
+  text-decoration: none;
+  &:hover {
+    outline: 0; // text-decoration: line-through;
+    cursor: pointer;
+  }
+  &.mailto {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
+
+/* ICONS
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+svg {
+  vertical-align: middle;
+}

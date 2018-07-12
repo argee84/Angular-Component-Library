@@ -1,0 +1,80 @@
+/* Tabulator
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.tabbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    button {
+        width: 100%;
+        text-align: center;
+        &:hover {
+            color: $primary;
+        }
+        &:hover:after {
+            background-color: $primary;
+        }
+        &.active {
+            color: $primary;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: 0;
+            width: 0;
+            height: 3px;
+            transition: all 200ms ease;
+        }
+        &.active:after {
+            background: $primary;
+        }
+        &.active:after,
+        &:hover:after {
+            width: 100%;
+            margin-left: -50%;
+        }
+        &.disabled {
+            @extend %disabled;
+        }
+        svg-icon {
+            width: 24px;
+            vertical-align: middle;
+            svg {
+                fill: $primary;
+            }
+        }
+        span {
+            display: none;
+        }
+    }
+    button,
+    button:visited,
+    button:active {
+        display: block;
+        padding-bottom: 9px;
+        margin-bottom: 0;
+        position: relative;
+    }
+    button,
+    button:hover {
+        text-decoration: none;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+    }
+}
+
+@media ($bp-larger-than-tablet) {
+    .tabbar {
+        button {
+            svg-icon {
+                display: none;
+            }
+            span {
+                display: inherit;
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+/* SCROLL SNAP FIX
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$child-calc: calc(10% / 4);
+section.scroll-snap-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px; //100%;
+    .doc-scroller-v,
+    .doc-scroller-h {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        /*
+        Enables the Scroll Snapping,
+        saying it is mandatory (hard snap)
+        */
+        scroll-snap-type: mandatory;
+        /*
+        Make a Native Smooth Scrolling work: /native_smooth_scrolling/
+        After that browser starts to scroll blocks
+        when you use anchors: http://help.typepad.com/anchor-tags.html
+        It adds smooth scrolling instead of "jumping"
+        when you press number of a slide to scroll to.
+        */
+        scroll-behavior: smooth;
+        .page {
+            .inside {
+                width: 80%; //80vw;
+                height: 80%;
+                margin: $child-calc auto 0;
+                background: yellow;
+                opacity: 0.3;
+            }
+        }
+        .one {
+            background: blue;
+        }
+        .two {
+            background: purple;
+        }
+        .three {
+            background: red;
+        }
+        .four {
+            background: orange;
+        }
+    }
+    .doc-scroller-h {
+        overflow-y: hidden;
+        overflow-x: auto;
+        /* alternativ overflow for chrome */
+        overflow-x: overlay;
+        /*
+        Sets the scroll snapping to the each point which is
+        on the X*GALLERY_WIDTH distance horizontally from start.
+        Images width are the same as containers.
+        That's why the scroll snaps to the beginning of the each image.
+        */
+        scroll-snap-points-x: repeat(2436px); //repeat(100%);
+        /* older spec implementation */
+        scroll-snap-destination: 0% 100%;
+        /* set horizontal spacing 0 */
+        font-size: 0; 
+        .page {
+          scroll-snap-align: start;
+          width: 100%;
+          height: 100%;
+          display: inline-block;
+          vertical-align: top;
+        }
+    }
+    .doc-scroller-v {
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* alternativ overflow for chrome */
+        overflow-y: overlay;
+        /*
+        Sets the scroll snapping to the each point which is
+        on the X*GALLERY_WIDTH distance horizontally from start.
+        Images width are the same as containers.
+        That's why the scroll snaps to the beginning of the each image.
+        */
+        scroll-snap-points-y: repeat(100%);
+        /* older spec implementation */
+        scroll-snap-destination: 100% 0%;
+        .page {
+          float: left;
+          width: 100%; //100vw;
+          height: 100%; //100vh;
+        }
+    }
+}

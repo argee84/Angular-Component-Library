@@ -1,0 +1,360 @@
+/* NGX DATE PICKER
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+.ngx-picker {
+    width: min-content;
+    display: flex;
+    position: relative;
+    border-radius: 0px;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $white;
+    input[type="text"] {
+        box-shadow: none;
+        &:focus {
+            border-color: $white;
+        }
+    }
+
+    &:focus-within {
+        border-color: $primary;
+    }
+
+
+    /**
+    * NGX DATE PICKER BUTTONS
+    */
+    button {
+        // border-color: transparent;
+        // background-color: transparent;
+        svg {
+            width: 24px;
+            vertical-align: middle;
+            * {
+                fill: $darkgrey;
+            }
+        }
+        &:focus {
+            svg * {
+                fill: $primary;
+            }
+        }
+    }
+
+    .ngx-picker--btn {
+        height: $btn-height;
+        padding: 0 1em;
+        color: $white;
+        background-color: $darkgrey;
+        border: 1px solid $darkgrey;
+        border-radius: $btn-radius;
+        font-size: 1em;
+    
+        &:hover {
+            transition: .25s ease;
+            cursor: pointer;
+        }
+    
+        &:focus {
+            outline-color: transparent;
+        }
+    
+        &.ngx-picker--btn__selected {
+            color: $primary;
+        }
+        
+        &.ngx-picker--btn__month,
+        &.ngx-picker--btn__year {
+            position: relative;
+            color: $primary;
+            background-color: transparent;
+            border-color: transparent;
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: 0;
+                width: 0;
+                height: 2px;
+                transition: all 200ms ease;
+            }
+            &:hover:after {
+                width: 100%;
+                margin-left: -50%;
+                background-color: $primary;
+            }
+        }
+        &.ngx-picker--btn__month {
+            width: calc(60% - 2em);
+            margin-left: 2em;
+        }
+        &.ngx-picker--btn__year {
+            width: calc(40% - 2em);
+            margin-right: 2em;
+        }
+        
+        &.ngx-picker--btn__done:hover {
+            border-bottom-right-radius: 0.2em;
+        }
+        
+        &.ngx-picker--btn__next:hover {
+            border-top-right-radius: 0.2em;
+        }
+
+        &.ngx-picker--btn__previous,
+        &.ngx-picker--btn__next {
+            color: $primary;
+            background-color: transparent;
+            border-color: transparent;
+            pointer-events: initial;
+        }
+
+        &.ngx-picker--btn__now,
+        &.ngx-picker--btn__close {
+            padding: 0 30px;
+        }
+    }
+
+    /**
+    * NGX CALENDAR SETTING
+    */
+    .calendar {
+        display: flex;
+        flex-flow: row wrap;
+        position: absolute;
+        left: 0;
+        top: 3.5em;
+        z-index: 10;
+        max-width: 21em;
+        min-width: 20em;
+        padding: 1em;
+        background-color: $white;
+        border-radius: 0.2em;
+        box-shadow: $box-shadow;
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            left: 10%;
+            bottom: 100%;
+            border-width: 10px;
+            border-style: solid;
+            border-bottom-color: $white;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+        }
+
+        .calendar--previous-and-next {
+            position: absolute;
+            top: 1em;
+            right: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .calendar--years-select,
+        .calendar--months-select {
+            width: 100%;
+            max-height: 14.85em;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background-color: $white;
+
+            .calendar--year,
+            .calendar--month {
+                width: 100%;
+                display: block;
+                padding: .5em 1em;
+                overflow: hidden;
+                color: $anthracite;
+            
+                &:hover {
+                    cursor: pointer;
+                    background-color: $softgrey;
+                    font-weight: 400;
+                    color: $anthracite;
+                }
+            
+                &.calendar--year__selected,
+                &.calendar--month__selected {
+                    color: $white;
+                    background-color: $primary;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .calendar--days-and-weeks {
+            margin-top: 1em;
+            padding: 1em 0 1em;
+            border-width: 1px;
+            border-style: solid;
+            border-color: $softgrey;
+            border-left-color: transparent;
+            border-right-color: transparent;
+
+            .calendar--days-of-week {
+                display: flex;
+                justify-content: space-around;
+                .calendar--day-of-week {
+                    position: relative;
+                    padding: .5em;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $primary;
+                    font-size: .9em;
+                }
+            }
+
+            .calendar--days-select {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                &::after {
+                    content: '';
+                    width: 100%;
+                }
+                .calendar--day {
+                    width: 2.285em;
+                    // height: 2.285em;
+                    padding: .477em 0; //.3615em .5em;
+                    flex-basis: 14.285%;
+                    font-weight: 500;
+                    color: $anthracite;
+                    text-align: center;
+                }
+                
+                .calendar--day__muted {
+                    color: $grey;
+                }
+                
+                .calendar--day:hover,
+                .calendar--day__selected {
+                    border-radius: 1.25em;
+                }
+                
+                .calendar--day:hover {
+                    cursor: pointer;
+                    color: $anthracite;
+                    background-color: $softgrey;
+                }
+                
+                .calendar--day__selected {
+                    background-color: $primary;
+                    color: $white;
+                }
+            }
+        }
+    
+        .calendar--footer {
+            width: 100%;
+            padding: 1.5em 0 0;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    /**
+    * NGX TIME SETTING
+    */
+    .time-picker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 1em;
+    
+        .time--values {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 16em;
+            min-width: 16em;
+            background-color: $softgrey;
+        
+            .time--value {
+                width: 2.66em;
+                font-size: 1em;
+                padding: .5em 0;
+                text-align: center;
+                color: $anthracite;
+        
+                &:hover {
+                    transition: .25s ease;
+                    cursor: pointer;
+                    background-color: $softgrey;
+                }
+                
+                .time--value__selected {
+                    color: $anthracite;
+                    background-color: $softgrey;
+                }
+            }
+        }
+    
+        .ngx-picker--btn__hour,
+        .ngx-picker--btn__minute,
+        .ngx-picker--btn__am,
+        .ngx-picker--btn__pm {
+            color: $primary-font-color;
+            background-color: transparent;
+            border-color: transparent;
+            
+            &.ngx-picker--btn__selected {
+                color: $primary;
+            }
+        }
+    
+        .ngx-picker--btn__hour,
+        .ngx-picker--btn__am {
+            padding-right: 0;
+        }
+    
+        .ngx-picker--btn__minute,
+        .ngx-picker--btn__pm {
+            padding-left: 0;
+        }
+    
+        .ngx-picker--btn__hour {
+            &::after {
+                content: ' :';
+            }
+        }
+    
+        .ngx-picker--btn__am,
+        .ngx-picker--btn__am .ngx-picker--btn__selected {
+            &::after {
+                content: ' /';
+                color: $anthracite;
+            }
+        }
+    }
+
+    /**
+    * NGX HIDE ITEMS
+    */
+    [hidden] {
+        display: none !important;
+    }
+}
+
+/**
+* ANGULAR FIX
+*/
+ngx-time {
+    width: 100%;
+}

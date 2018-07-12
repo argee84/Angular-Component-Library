@@ -1,0 +1,53 @@
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* NOTE
+html is set to 62.5% so that all the REM measurements are
+based on 10px sizing. So basically 1.5rem = 15px :) */
+
+html {
+  height: 100%;
+  /* Likely future */
+  font-size: 62.5%;
+  @extend %no-select;
+}
+
+body {
+  min-height:100%;
+  height:auto;
+  background-color: #fdfdfd;
+  color: $primary-font-color;
+  @extend %font-light;
+  font-size: 1.5em;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  line-height: 1.6;
+
+  &.modal-openend {
+    overflow: hidden;
+  }
+}
+
+html,
+body {
+  margin:0; 
+  padding:0;
+}
+
+main {
+  padding: 4em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+*:focus {
+  outline: none;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
