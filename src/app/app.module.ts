@@ -23,6 +23,7 @@ import { BeartPiechartComponent } from './ui-elements/beart-piechart/beart-piech
 import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart-progressbar.component';
 import { BeartRadiobuttonComponent } from './ui-elements/beart-radiobutton/beart-radiobutton.component';
 import { BeartSearchComponent } from './ui-elements/beart-search/beart-search.component';
+import { BeartSearchFilterDropdownComponent } from './ui-elements/beart-search-filter-dropdown/beart-search-filter-dropdown.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BeartSearchComponent } from './ui-elements/beart-search/beart-search.co
     BeartPiechartComponent,
     BeartProgressbarComponent,
     BeartRadiobuttonComponent,
-    BeartSearchComponent
+    BeartSearchComponent,
+    BeartSearchFilterDropdownComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div
+  class="search-filter"
+  [ngClass]="{'disabled': isDisabled}">
+
+  <input
+    class="search-filter--input"
+    placeholder="Select.."
+    (click)="openSearchFilter()"
+    value="{{_isValue}}"
+    readonly />
+  <button
+    *ngIf="_isValue"
+    (click)="removeSelected()"><svg-icon class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon></button>
+  <div
+    class="search-filter--list"
+    [ngClass]="{'show': openFilter}">
+
+    <form class="erasable-search">
+      <input
+        class="erasable-search--input"
+        type="search"
+        name="focus"
+        placeholder="{{placeholder}}"
+        [(ngModel)]="_mySearch"
+        (ngModelChange)="checkSearchEmpty()"  />
+      <button 
+          class="erasable-search--button"
+          type="reset">
+        <svg-icon
+          *ngIf="!_mySearch"
+          class="search-icon"
+          src="assets/gfx/search-icon.svg"></svg-icon>
+        <svg-icon
+          *ngIf="_mySearch"
+          class="erase-icon"
+          src="assets/gfx/erase-icon.svg"></svg-icon>
+      </button>
+    </form>
+
+    <ul>
+      <li
+        *ngFor="let item of listItems | filter : _mySearch"
+        [ngClass]="{'selected': _isSelected.currentFilter==item}"
+        (click)="selectedSearchFilter(item)">{{item}}</li>
+    </ul>
+  </div>
+</div>

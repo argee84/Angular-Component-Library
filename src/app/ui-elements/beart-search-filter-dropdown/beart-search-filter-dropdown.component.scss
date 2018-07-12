@@ -1,0 +1,101 @@
+@import "variables";
+
+.search-filter {
+    position: relative;
+    display: inline-block;
+
+    &.disabled {
+        @extend %disabled;
+    }
+    a:hover {
+        background-color: #ddd;
+    }
+
+    button {
+        position: absolute;
+        width: 18px;
+        padding: 0;
+        top: 46%;
+        right: 30px;
+        transform: translateY(-46%);
+        border: none;
+        background-color: transparent;
+        text-align: center;
+        &:focus {
+            svg-icon {
+                fill: $primary;
+            }
+        }
+        svg-icon {
+            width: 100%;
+            fill: $anthracite;
+            &.erase-icon {
+                width: 12px;
+            }
+            svg {
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.search-filter--input {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    padding: 6px 32px 6px 10px; // The 6px vertically centers text on FF, ignored by Webkit
+    vertical-align: top;
+    border: 1px solid lighten($white, 8.8%);
+    border-radius: $global-radius;
+    background-color: $white;
+    background-image: url('../../../assets/gfx/select-down-arrow-icon.svg');
+    background-position: 98% 50%;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    box-shadow: $box-shadow;
+    cursor: context-menu;
+
+    &:focus {
+        border: 1px solid $primary;
+        outline: 0;
+    }
+}
+
+.search-filter--list {
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    background-color: $softgrey;
+    overflow: auto;
+    // border: 1px solid #ddd;
+    z-index: 100;
+
+    form {
+        padding: 4px;
+    }
+
+    ul {
+        margin: 0;
+        li {
+            display: block;
+            padding: 12px 16px;
+            color: $primary-font-color;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                color: $white;
+                background-color: $grey;
+            }
+
+            &.selected {
+                color: $white;
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+.show {
+    display:block;
+}
