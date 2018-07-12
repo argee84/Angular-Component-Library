@@ -1,0 +1,9 @@
+<div class="pie-chart-wrapper">
+    <div class="pie" [attr.data-value]="dataValue"></div>
+    <div class="pie-percent">
+        <div class="pie-number">
+            <span class="pie-percentage-text" [attr.data-value]="dataValue"></span>
+            <p><ng-content></ng-content></p>
+        </div>
+    </div>
+</div>

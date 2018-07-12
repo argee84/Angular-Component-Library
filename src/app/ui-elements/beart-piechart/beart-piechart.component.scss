@@ -1,0 +1,127 @@
+@import "variables";
+
+/* PIECHART
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+
+$pie-height: 15em; //pie height
+$pie-border-stroke: .7em; //pie stroke width
+$percent-sign: 1%;
+$loadingTime: 3.5s;
+
+.pie-chart-wrapper {
+    width: $pie-height;
+    height: $pie-height;
+    display: inline-block;
+    position: relative;
+    background: $grey;
+    border-radius: $pie-height / 2;
+}
+
+.pie {
+    position: absolute;
+    width: $pie-height/2;
+    height: $pie-height;
+    overflow: hidden;
+    transform-origin: left center;
+    //the visible part of the pie
+    &::before {
+        content: "";
+        position: absolute;
+        width: $pie-height / 2;
+        height: $pie-height;
+        left: -($pie-height / 2);
+        border-radius: ($pie-height / 2) 0 0 ($pie-height / 2);
+        transform-origin: right center;
+    }
+}
+
+//add color to pie pieces
+.pie::before,
+.pie::after {
+    background-color: $primary;
+}
+
+.pie-percent {
+    z-index: 1;
+    position: absolute;
+    top: $pie-border-stroke;
+    right: $pie-border-stroke;
+    bottom: $pie-border-stroke;
+    left: $pie-border-stroke;
+    background: $white;
+    border-radius: 50%;
+}
+
+.pie-number {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+    text-align: center;
+    .pie-percentage-text {
+        font-size: 4rem;
+        color: $primary;
+    }
+}
+
+//rotate the amount of the pie that's showing
+@for $i from 1 through 99 {
+    .pie[data-value="#{$i}"]::before {
+        transform: rotate(#{$i * 3.6}deg);
+        transition: All 1s ease;
+        animation-name: rotate;
+        animation-duration: 3.5s;
+        animation-fill-mode: forwards;
+        @keyframes rotate {
+            from {
+                transform: rotate(0);
+            }
+            to {}
+        }
+    }
+}
+
+@for $i from 50 through 100 {
+    .pie[data-value="#{$i}"] {
+        width: $pie-height;
+        height: $pie-height;
+        transform-origin: center center;
+        &::before {
+            left: 0px;
+        }
+        //big pieces (>50%) need a second semicircle pointed in the opposite direction to hide the first part behind
+        &::after {
+            content: "";
+            position: absolute;
+            width: $pie-height / 2;
+            height: $pie-height;
+            left: $pie-height / 2;
+            border-radius: 0 ($pie-height / 2) ($pie-height / 2) 0;
+        }
+    }
+}
+
+@for $i from 0 through 49 {
+    .pie[data-value="#{$i}"] {
+        left: $pie-height*0.5;
+    }
+}
+
+//count number
+@for $i from 1 through 100 {
+    .pie-percentage-text[data-value="#{$i}"]::after {
+        content: '#{$i}%';
+        animation-name: percentage#{$i};
+        animation-duration: $loadingTime;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(.03,.57,.58,1);                
+        @keyframes percentage#{$i} {
+            @for $j from 0 through $i {
+                #{$j * (100 / $i) * 1%} {
+                    content: '#{$j * 1%}';
+                } 
+            }
+        }
+    }
+}

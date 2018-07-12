@@ -16,12 +16,16 @@ import { DomService }                         from './services/dom.service';
 /****** OWN-COMPONENTs *****************************************************/
 import { BeartCheckboxComponent } from './ui-elements/beart-checkbox/beart-checkbox.component';
 import { BeartModalComponent } from './ui-elements/beart-modal/beart-modal.component';
+import { BeartPiechartComponent } from './ui-elements/beart-piechart/beart-piechart.component';
+import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart-progressbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeartCheckboxComponent,
-    BeartModalComponent
+    BeartModalComponent,
+    BeartPiechartComponent,
+    BeartProgressbarComponent
   ],
   imports: [
     BrowserModule,
