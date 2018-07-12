@@ -1,0 +1,13 @@
+<div class="toggle-switch-container"
+     [ngClass]="{'disabled': isDisabled}">
+    <div class="toggle-switch"
+         [ngClass]="{'active': isSwitched}">
+        <input id="{{switchToggleId}}"
+               type="checkbox"
+               [disabled]="isDisabled"
+               [checked]="isSwitched"
+               (click)="toggleSwitch()">
+        <label for="{{switchToggleId}}"></label>
+    </div>
+    <p><ng-content></ng-content></p>
+</div>

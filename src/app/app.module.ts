@@ -24,6 +24,7 @@ import { BeartProgressbarComponent } from './ui-elements/beart-progressbar/beart
 import { BeartRadiobuttonComponent } from './ui-elements/beart-radiobutton/beart-radiobutton.component';
 import { BeartSearchComponent } from './ui-elements/beart-search/beart-search.component';
 import { BeartSearchFilterDropdownComponent } from './ui-elements/beart-search-filter-dropdown/beart-search-filter-dropdown.component';
+import { BeartSwitchToggleComponent } from './ui-elements/beart-switch-toggle/beart-switch-toggle.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BeartSearchFilterDropdownComponent } from './ui-elements/beart-search-f
     BeartProgressbarComponent,
     BeartRadiobuttonComponent,
     BeartSearchComponent,
-    BeartSearchFilterDropdownComponent
+    BeartSearchFilterDropdownComponent,
+    BeartSwitchToggleComponent
   ],
   imports: [
     BrowserModule,

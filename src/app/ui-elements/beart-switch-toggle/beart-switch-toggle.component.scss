@@ -1,0 +1,46 @@
+@import "variables";
+
+/* TOOGLE-SWITCH
+* ––––––––––––––––––––––––––––––––––––––––––––––––––
+*/
+.toggle-switch-container {
+    display: flex;
+    &.disabled {
+      @extend %disabled;
+    }
+    .toggle-switch {
+        width: 43px;
+        height: 18px;
+        margin-top: 3px;
+        position: relative;
+        border-radius: 50px;
+        background: $grey;
+        transition: all 0.7s ease;
+        &.active {
+            background-color: $primary;
+        }
+        input[type=checkbox] {
+            visibility: hidden;
+            &:checked+label {
+                left: 20px;
+            }
+        }
+        label {
+            width: 24px;
+            height: 24px;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            top: -4px;
+            left: 0px;
+            z-index: 1;
+            background: $softgrey;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+        }
+    }
+    p {
+        @extend %label-spacing;
+    }
+}
