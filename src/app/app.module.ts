@@ -25,6 +25,7 @@ import { BeartRadiobuttonComponent } from './ui-elements/beart-radiobutton/beart
 import { BeartSearchComponent } from './ui-elements/beart-search/beart-search.component';
 import { BeartSearchFilterDropdownComponent } from './ui-elements/beart-search-filter-dropdown/beart-search-filter-dropdown.component';
 import { BeartSwitchToggleComponent } from './ui-elements/beart-switch-toggle/beart-switch-toggle.component';
+import { BeartVideoComponent } from './ui-elements/beart-video/beart-video.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { BeartSwitchToggleComponent } from './ui-elements/beart-switch-toggle/be
     BeartRadiobuttonComponent,
     BeartSearchComponent,
     BeartSearchFilterDropdownComponent,
-    BeartSwitchToggleComponent
+    BeartSwitchToggleComponent,
+    BeartVideoComponent
   ],
   imports: [
     BrowserModule,
