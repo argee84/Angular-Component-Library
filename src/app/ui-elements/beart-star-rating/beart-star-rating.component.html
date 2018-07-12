@@ -1,0 +1,21 @@
+<!--
+    IMPORTANT: FIRST INSTALL DIRECTIVE !!!!
+    https://github.com/BioPhoton/angular-star-rating/wiki/Installing
+
+    PROPERTY BINDINGS
+    https://github.com/BioPhoton/angular-star-rating/wiki/Property-Bindings
+
+    WIKI
+    https://github.com/BioPhoton/angular-star-rating/wiki
+-->
+
+<star-rating
+  [starType]="'svg'"
+  [labelText]="_ratingInput"
+  [getColor]="getColor"
+  [showHalfStars]="true"
+  [numOfStars]="10"
+  [hoverEnabled]="true"
+  (starClickChange)="onClick($event)"
+  (ratingChange)="onRatingChange($event)"
+  (hoverRatingChange)="onHoverRatingChange($event)"></star-rating>
