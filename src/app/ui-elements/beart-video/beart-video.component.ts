@@ -28,69 +28,65 @@ export class BeartVideoComponent implements OnInit {
 
     let videoList = this.videoItems;
 
-    // SHOW 1st video-container, HIDE 2nd video-container on start 
-    vid.hidden = false;
-    vidSeamless.hidden = true;
+    if (this.videoId) {
+      // SHOW 1st video-container, HIDE 2nd video-container on start 
+      vid.hidden = false;
+      vidSeamless.hidden = true;
 
-    // MUTED both video-container
-    vid.muted = this.isMuted;
-    vidSeamless.muted = this.isMuted;
+      // MUTED both video-container
+      vid.muted = this.isMuted;
+      vidSeamless.muted = this.isMuted;
 
-    // AUTOSTART 1st video-container
-    vid.setAttribute("src", videoList[videoIndex]);
-    vid.play();
+      // AUTOSTART 1st video-container
+      vid.setAttribute("src", videoList[videoIndex]);
+      vid.play();
 
-    // TOGGLE video-container and start 2nd video-container
-    vid.onended = function() {
-      console.log('happy happy end');
-      // console.log(vid.currentTime + '______vid.currentTime');
+      // TOGGLE video-container and start 2nd video-container
+      vid.onended = function() {
+        vid.hidden = !vid.hidden;
+        vidSeamless.hidden = !vidSeamless.hidden;
+        vidSeamless.play();
+      };
 
-      vid.hidden = !vid.hidden;
-      vidSeamless.hidden = !vidSeamless.hidden;
-      vidSeamless.play();
-    };
+      // TOGGLE video-container and start 1st video-container
+      vidSeamless.onended = function() {
+        vidSeamless.hidden = !vidSeamless.hidden;
+        vid.hidden = !vid.hidden;
+        vid.play();  
+      };
 
-    // TOGGLE video-container and start 1st video-container
-    vidSeamless.onended = function() {
-      // console.log('happy end');
-      // console.log(vid.currentTime + '______vid.currentTime');
+      // ADD new src to 2nd video-container
+      vid.onplay = function() {
+        if(videoList.length - 1 === 0) {
+          vid.loop = true;
+        } else {
+          if(videoIndex < videoList.length - 1){
+            videoIndex++;    
+            vidSeamless.setAttribute("src", videoList[videoIndex]);
+          }
+          else{
+            videoIndex = 0;
+            vidSeamless.setAttribute("src", videoList[videoIndex]);
+          }
+        }
+      };
 
-      vidSeamless.hidden = !vidSeamless.hidden;
-      vid.hidden = !vid.hidden;
-      vid.play();  
-    };
-
-    // ADD new src to 2nd video-container
-    vid.onplay = function() {
-      if(videoList.length - 1 === 0) {
-        vid.loop = true;
-      } else {
+      // ADD new src to 1st video-container
+      vidSeamless.onplay = function() {
         if(videoIndex < videoList.length - 1){
-          videoIndex++;    
-          vidSeamless.setAttribute("src", videoList[videoIndex]);
+          videoIndex++;       
+          vid.setAttribute("src", videoList[videoIndex]);
         }
         else{
           videoIndex = 0;
-          vidSeamless.setAttribute("src", videoList[videoIndex]);
-        }
-      }
-    };
+          vid.setAttribute("src", videoList[videoIndex]);
+        } 
+      };
 
-    // ADD new src to 1st video-container
-    vidSeamless.onplay = function() {
-      if(videoIndex < videoList.length - 1){
-        videoIndex++;       
-        vid.setAttribute("src", videoList[videoIndex]);
-      }
-      else{
-        videoIndex = 0;
-        vid.setAttribute("src", videoList[videoIndex]);
-      } 
-    };
-
-    // vid.onpause = function() { 
-    //   console.log('paused');
-    //   console.log(vid.currentTime + '______vid.currentTime');
-    // };
+      // vid.onpause = function() { 
+      //   console.log('paused');
+      //   console.log(vid.currentTime + '______vid.currentTime');
+      // };
+    }
   }
 }

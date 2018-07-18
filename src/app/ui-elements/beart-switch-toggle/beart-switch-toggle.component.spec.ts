@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { BeartSwitchToggleComponent } from './beart-switch-toggle.component';
 
@@ -8,7 +9,8 @@ describe('BeartSwitchToggleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeartSwitchToggleComponent ]
+      declarations: [ BeartSwitchToggleComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
   }));

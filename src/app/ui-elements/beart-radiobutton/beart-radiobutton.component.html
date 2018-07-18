@@ -1,17 +1,18 @@
-<div
-    class="radiobutton-container"
-    [ngClass]="{'disabled': isDisabled}">
+<form>
+    <div
+        *ngFor="let radioButtonList of radioButtonList"
+        class="radiobutton-container"
+        [ngClass]="{'disabled': radioButtonList.disabled}">
 
-    <div class="radiobutton">
-        <input
-            id="{{radioButtonId}}"
-            type="radio"
-            name="{{radioButtonGroup}}"
-            value="{{radioButtonValue}}"
-            [disabled]="isDisabled"
-            [checked]="isSelected"
-            (click)="changeSelected()">
-        <label for="{{radioButtonId}}"></label>
+        <div class="radiobutton">
+            <input
+                id="{{radioButtonList.id}}"
+                type="radio"
+                name="{{radioButtonList.name}}"
+                [value]="radioButtonList.value"
+                (click)="changeSelected(radioButtonList.value)">
+            <label for="{{radioButtonList.id}}"></label>
+        </div>
+        <span>{{radioButtonList.label}}</span>
     </div>
-    <p><ng-content></ng-content></p>
-</div>
+</form>

@@ -5,6 +5,7 @@
 */
 .toggle-switch-container {
     display: flex;
+    align-items: center;
     &.disabled {
       @extend %disabled;
     }
@@ -40,7 +41,8 @@
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
         }
     }
-    p {
+    span {
+        padding-top: .4rem;
         @extend %label-spacing;
     }
 }

@@ -3,7 +3,6 @@ import { BrowserAnimationsModule }            from '@angular/platform-browser/an
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }   from '@angular/core';
 import { FormsModule }                        from '@angular/forms';
 import { HttpClientModule }                   from '@angular/common/http'; 
-import { HttpModule }                         from '@angular/http';
 import { ServiceWorkerModule }                from '@angular/service-worker';
 import { environment }                        from '../environments/environment';
 
@@ -53,7 +52,6 @@ import { BeartStarRatingComponent } from './ui-elements/beart-star-rating/beart-
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    HttpModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
       newestOnTop: false,

@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { StarRatingModule } from 'angular-star-rating';
 
 import { BeartStarRatingComponent } from './beart-star-rating.component';
 
@@ -8,7 +11,9 @@ describe('BeartStarRatingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeartStarRatingComponent ]
+      imports: [ StarRatingModule.forRoot() ],
+      declarations: [ BeartStarRatingComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
   }));

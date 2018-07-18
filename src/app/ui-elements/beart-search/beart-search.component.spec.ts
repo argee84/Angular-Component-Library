@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FilterPipe } from '../../pipes/filter.pipe';
 
 import { BeartSearchComponent } from './beart-search.component';
 
@@ -8,7 +13,9 @@ describe('BeartSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeartSearchComponent ]
+      imports: [ FormsModule, HttpClientModule ],
+      declarations: [ BeartSearchComponent, FilterPipe ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
     .compileComponents();
   }));

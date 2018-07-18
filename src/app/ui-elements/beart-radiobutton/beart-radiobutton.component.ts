@@ -12,21 +12,23 @@ import {
 })
 export class BeartRadiobuttonComponent implements OnInit {
 
-  @Input() radioButtonId: string;
-  @Input() radioButtonGroup: string;
-  @Input() radioButtonValue: string;
-  @Input() isDisabled: boolean;
-  @Input() isSelected: boolean;
-  @Output() isSelectedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  private selectedValue: string;
 
-  constructor() { }
+  @Input() radioButtonList: any;
+  @Output() isSelectedChange: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor() {
+    this.selectedValue = '';
+  }
 
   ngOnInit() {
   }
 
-  changeSelected() {
-    this.isSelected = !this.isSelected;
-    this.isSelectedChange.emit(this.isSelected);
+  changeSelected(val) {
+    this.selectedValue = val;
+    this.isSelectedChange.emit(this.selectedValue);
+
+    console.log(this.selectedValue);
   }
 
 }

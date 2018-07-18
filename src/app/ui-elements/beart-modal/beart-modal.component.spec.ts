@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { ModalService } from '../../services/modal.service';
+import { DomService } from '../../services/dom.service';
+
 
 import { BeartModalComponent } from './beart-modal.component';
 
@@ -8,7 +13,9 @@ describe('BeartModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BeartModalComponent ]
+      declarations: [ BeartModalComponent ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [ ModalService, DomService ],
     })
     .compileComponents();
   }));

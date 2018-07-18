@@ -89,30 +89,13 @@
 
     <div id="radiobutton-wrapper">
         <h4>Radiobutton</h4>
-        <form class="align-h-container" #f="ngForm">
-            <beart-radiobutton
-                [radioButtonId]="'radiobutton'"
-                [radioButtonValue]="'Beef'"
-                [radioButtonGroup]="'test'"
-                [isDisabled]="false"
-                [(isSelected)]="_isRadioSelected">inactive radiobutton</beart-radiobutton>
-            
-            <beart-radiobutton
-                [radioButtonId]="'radiobutton-active'"
-                [radioButtonValue]="'Vegeterian'"
-                [radioButtonGroup]="'test'"
-                [isDisabled]="false"
-                [isSelected]="true">active radiobutton</beart-radiobutton>
-
-            <beart-radiobutton
-                [radioButtonId]="'radiobutton-disabled'"
-                [radioButtonValue]="'Salat'"
-                [radioButtonGroup]="'test'"
-                [isDisabled]="true"
-                [isSelected]="disabled">disabled radiobutton</beart-radiobutton>
-        </form>
         <div class="align-h-container">
-            <p>myFood value: {{ f.value | json }}</p>
+            <beart-radiobutton
+                [radioButtonList]="_searchList"
+                [(isSelected)]="_isRadioSelected">inactive radiobutton</beart-radiobutton>
+        </div>
+        <div class="align-h-container">
+            <p>Selected radiobutton value: {{this._isRadioSelected}}</p>
         </div>
     </div>
 

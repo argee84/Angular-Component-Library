@@ -15,6 +15,7 @@ $checkbox-width: 20px;
 
 .checkbox-container {
     display: flex;
+    align-items: center;
     &.disabled {
       @extend %disabled;
     }
@@ -64,7 +65,8 @@ $checkbox-width: 20px;
             }
         }
     }
-    p {
-      @extend %label-spacing;
+    span {
+        padding-top: .4rem;
+        @extend %label-spacing;
     }
 }

@@ -1,11 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ModalService } from './modal.service';
+import { DomService } from './dom.service';
 
 describe('ModalService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ModalService]
+      providers: [ModalService,DomService]
     });
   });
 

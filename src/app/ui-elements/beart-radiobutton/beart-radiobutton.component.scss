@@ -3,8 +3,15 @@
 /* RADIOBUTTON
 * ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
+form {
+    display: flex;
+    & > *:not(:last-child) {
+        margin-right: 2em;
+    }
+}
 .radiobutton-container {
     display: flex;
+    align-items: center;
     &.disabled {
       @extend %disabled;
     }
@@ -52,7 +59,8 @@
             }
         }
     }
-    p {
-      @extend %label-spacing;
+    span {
+        padding-top: .4rem;
+        @extend %label-spacing;
     }
 }
