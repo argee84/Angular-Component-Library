@@ -21,16 +21,16 @@ import { AngularSvgIconModule }               from 'angular-svg-icon';
 import { StarRatingModule }                   from 'angular-star-rating';
 
 /****** OWN-COMPONENTs *****************************************************/
-import { BeartCheckboxComponent } 			  from './ui-elements/beart-checkbox/beart-checkbox.component';
-import { BeartModalComponent } 				  from './ui-elements/beart-modal/beart-modal.component';
-import { BeartPiechartComponent } 			  from './ui-elements/beart-piechart/beart-piechart.component';
-import { BeartProgressbarComponent } 		  from './ui-elements/beart-progressbar/beart-progressbar.component';
-import { BeartRadiobuttonComponent } 		  from './ui-elements/beart-radiobutton/beart-radiobutton.component';
-import { BeartSearchComponent } 			  from './ui-elements/beart-search/beart-search.component';
+import { BeartCheckboxComponent } 			      from './ui-elements/beart-checkbox/beart-checkbox.component';
+import { BeartModalComponent } 				        from './ui-elements/beart-modal/beart-modal.component';
+import { BeartPiechartComponent } 			      from './ui-elements/beart-piechart/beart-piechart.component';
+import { BeartProgressbarComponent } 		      from './ui-elements/beart-progressbar/beart-progressbar.component';
+import { BeartRadiobuttonComponent } 		      from './ui-elements/beart-radiobutton/beart-radiobutton.component';
+import { BeartSearchComponent } 			        from './ui-elements/beart-search/beart-search.component';
 import { BeartSearchFilterDropdownComponent } from './ui-elements/beart-search-filter-dropdown/beart-search-filter-dropdown.component';
-import { BeartSwitchToggleComponent } 		  from './ui-elements/beart-switch-toggle/beart-switch-toggle.component';
-import { BeartVideoComponent } 				  from './ui-elements/beart-video/beart-video.component';
-import { BeartStarRatingComponent } from './ui-elements/beart-star-rating/beart-star-rating.component';
+import { BeartSwitchToggleComponent } 		    from './ui-elements/beart-switch-toggle/beart-switch-toggle.component';
+import { BeartVideoComponent } 				        from './ui-elements/beart-video/beart-video.component';
+import { BeartStarRatingComponent }           from './ui-elements/beart-star-rating/beart-star-rating.component';
 
 @NgModule({
   declarations: [
