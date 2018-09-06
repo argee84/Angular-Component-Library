@@ -67,12 +67,12 @@
                 [checkBoxId]="'checkbox'"
                 [isDisabled]="false"
                 [(isChecked)]="_isCheckboxChecked">inactive checkbox</beart-checkbox>
-            
+
             <beart-checkbox
                 [checkBoxId]="'checkbox-active'"
                 [isDisabled]="false"
                 [isChecked]="true">active checkbox</beart-checkbox>
-            
+
             <beart-checkbox
                 [checkBoxId]="'checkbox-disabled'"
                 [isDisabled]="true"
@@ -102,7 +102,7 @@
     <!-- Radiobutton / End -->
 
     <!-- Switch Toggle ====================================================================== -->
-    
+
     <div id="switch-wrapper">
         <h4>Toggle switch</h4>
         <div class="align-h-container">
@@ -110,7 +110,7 @@
                 [switchToggleId]="'switch-toggle'"
                 [isDisabled]="false"
                 [(isSwitched)]="_isToggleSwitched">inactive switch-toggle</beart-switch-toggle>
-            
+
             <beart-switch-toggle
                 [switchToggleId]="'switch-toggle-active'"
                 [isDisabled]="false"
@@ -198,7 +198,7 @@
                 <input type="tel" placeholder="tel">
                 <input type="url" placeholder="url">
                 <input type="password" placeholder="password">
-            </div>    
+            </div>
             <textarea name="" id="" cols="30" rows="10"></textarea>
             <input type="submit" (click)="addSubmitAttemptedTrigger()">
             </fieldset>
@@ -208,7 +208,7 @@
     <!-- Forms / End -->
 
     <!-- Search Filter Dropdown ============================================================== -->
-    
+
     <div id="search-filter-wrapper">
         <h4>Search Filter Dropdown</h4>
         <div class="align-h-container">
@@ -224,7 +224,7 @@
     <!-- Search Filter Dropdown / End -->
 
     <!-- Modal ============================================================================== -->
-    
+
     <div id="modal-dialog-wrapper">
         <h4>Modal</h4>
         <div class="align-h-container">
@@ -268,12 +268,12 @@
 
     <!-- Datepicker ======================================================================== -->
 
-    <div id="datepicker-wrapper">
+    <!-- <div id="datepicker-wrapper">
         <h4>Datepicker</h4>
         <div class="align-h-container">
-            
+
         </div>
-    </div>
+    </div> -->
 
     <!-- Datepicker / End -->
 
@@ -288,7 +288,7 @@
                 <beart-piechart
                     [dataValue]="68">Test</beart-piechart>
             </div>
-        
+
             <!-- Pie Chart / End -->
 
 
@@ -299,7 +299,7 @@
                 <beart-progressbar
                     [dataValue]="98">Test</beart-progressbar>
             </div>
-        
+
             <!-- Bar Chart / End -->
 
         </div>
@@ -496,13 +496,13 @@
                 </div>
             </section>
         </div>
-    
+
         <!-- Snap Scroll / End -->
 
 </main>
 
 <!-- Custom modal setup -->
-<div id="modal-wrapper" class="hidden"> 
+<div id="modal-wrapper" class="hidden">
     <div id="modal-container" class="hidden"></div>
     <div id="overlay" (click)="removeModal()" class="hidden"></div>
 </div>

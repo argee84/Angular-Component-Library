@@ -8,7 +8,7 @@ import {
 @Component({
   selector: 'beart-checkbox',
   templateUrl: './beart-checkbox.component.html',
-  styleUrls: ['./beart-checkbox.component.scss']
+  styleUrls: ['./beart-checkbox.component.scss'],
 })
 export class BeartCheckboxComponent implements OnInit {
 

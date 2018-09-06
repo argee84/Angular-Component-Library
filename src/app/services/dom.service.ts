@@ -13,7 +13,7 @@ export class DomService {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
-    private injector: Injector
+    private injector: Injector,
   ) { }
 
   public appendComponentTo(parentId: string, child: any, childConfig?: childConfig) {
