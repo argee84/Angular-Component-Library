@@ -1,15 +1,15 @@
 import {
-	Component,
-	OnInit,
-	AfterViewInit,
-	Input } from '@angular/core';
+  Component,
+  OnInit,
+  AfterViewInit,
+  Input } from '@angular/core';
 
 @Component({
   selector: 'beart-video',
   templateUrl: './beart-video.component.html',
   styleUrls: ['./beart-video.component.scss']
 })
-export class BeartVideoComponent implements OnInit {
+export class BeartVideoComponent implements OnInit, AfterViewInit {
 
   @Input() videoId: string;
   @Input() videoItems: Array<string>;
@@ -17,7 +17,7 @@ export class BeartVideoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {  
+  ngOnInit() {
   }
 
   ngAfterViewInit() {
@@ -29,7 +29,7 @@ export class BeartVideoComponent implements OnInit {
     let videoList = this.videoItems;
 
     if (this.videoId) {
-      // SHOW 1st video-container, HIDE 2nd video-container on start 
+      // SHOW 1st video-container, HIDE 2nd video-container on start
       vid.hidden = false;
       vidSeamless.hidden = true;
 
@@ -38,7 +38,7 @@ export class BeartVideoComponent implements OnInit {
       vidSeamless.muted = this.isMuted;
 
       // AUTOSTART 1st video-container
-      vid.setAttribute("src", videoList[videoIndex]);
+      vid.setAttribute('src', videoList[videoIndex]);
       vid.play();
 
       // TOGGLE video-container and start 2nd video-container
@@ -52,38 +52,36 @@ export class BeartVideoComponent implements OnInit {
       vidSeamless.onended = function() {
         vidSeamless.hidden = !vidSeamless.hidden;
         vid.hidden = !vid.hidden;
-        vid.play();  
+        vid.play();
       };
 
       // ADD new src to 2nd video-container
       vid.onplay = function() {
-        if(videoList.length - 1 === 0) {
+        if (videoList.length - 1 === 0) {
           vid.loop = true;
         } else {
-          if(videoIndex < videoList.length - 1){
-            videoIndex++;    
-            vidSeamless.setAttribute("src", videoList[videoIndex]);
-          }
-          else{
+          if (videoIndex < videoList.length - 1) {
+            videoIndex++;
+            vidSeamless.setAttribute('src', videoList[videoIndex]);
+          } else {
             videoIndex = 0;
-            vidSeamless.setAttribute("src", videoList[videoIndex]);
+            vidSeamless.setAttribute('src', videoList[videoIndex]);
           }
         }
       };
 
       // ADD new src to 1st video-container
       vidSeamless.onplay = function() {
-        if(videoIndex < videoList.length - 1){
-          videoIndex++;       
-          vid.setAttribute("src", videoList[videoIndex]);
-        }
-        else{
+        if (videoIndex < videoList.length - 1) {
+          videoIndex++;
+          vid.setAttribute('src', videoList[videoIndex]);
+        } else {
           videoIndex = 0;
-          vid.setAttribute("src", videoList[videoIndex]);
-        } 
+          vid.setAttribute('src', videoList[videoIndex]);
+        }
       };
 
-      // vid.onpause = function() { 
+      // vid.onpause = function() {
       //   console.log('paused');
       //   console.log(vid.currentTime + '______vid.currentTime');
       // };

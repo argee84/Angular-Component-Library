@@ -1,4 +1,4 @@
-@import "variables";
+@import "../../../styles/base/variables";
 
 /* BARCHART
 * ––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -77,12 +77,12 @@ $loadingTime: 4.5s;
         animation-name: percentage#{$i};
         animation-duration: $loadingTime;
         animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(.03,.57,.68,1);                
+        animation-timing-function: cubic-bezier(.03,.57,.68,1);
         @keyframes percentage#{$i} {
             @for $j from 0 through $i {
                 #{$j * (100 / $i) * 1%} {
                     content: '#{$j * 1%}';
-                } 
+                }
             }
         }
     }

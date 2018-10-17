@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-Visit http://dev.lexip-design.de/component/ to see running demo
+Visit https://stackblitz.com/github/argee84/Angular-Component-Library to see running demo
 
 ## Development server
 

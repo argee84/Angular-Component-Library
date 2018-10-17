@@ -16,7 +16,7 @@ export class BeartCheckboxComponent implements OnInit {
   @Input() isDisabled: boolean;
   @Input() isChecked: boolean;
   @Output() isCheckedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-  
+
   constructor() { }
 
   ngOnInit() {

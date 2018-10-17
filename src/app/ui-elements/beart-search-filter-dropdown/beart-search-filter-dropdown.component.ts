@@ -25,9 +25,9 @@ export class BeartSearchFilterDropdownComponent implements OnInit {
 
   @HostListener('document: click', ['$event'])
   clickout(event) {
-    if(!this.eRef.nativeElement.contains(event.target)) {
-      if(this.openFilter == true) {
-        this.openFilter =! this.openFilter;
+    if (!this.eRef.nativeElement.contains(event.target)) {
+      if (this.openFilter === true) {
+        this.openFilter = !this.openFilter;
       }
     }
   }
@@ -66,7 +66,7 @@ export class BeartSearchFilterDropdownComponent implements OnInit {
     /* set current selected item active */
     this._isSelected = { currentFilter: filter };
     /* close list */
-    this.openFilter =! this.openFilter;
+    this.openFilter = !this.openFilter;
 
     this.isItemSelected.emit(this._isValue);
   }

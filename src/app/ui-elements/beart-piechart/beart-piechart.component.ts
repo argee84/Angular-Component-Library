@@ -1,7 +1,7 @@
 import {
-	Component,
-	OnInit,
-	Input } from '@angular/core';
+  Component,
+  OnInit,
+  Input } from '@angular/core';
 
 @Component({
   selector: 'beart-piechart',

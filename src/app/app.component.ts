@@ -1,10 +1,8 @@
-import { 
-	Component,
-	OnInit } 					from '@angular/core';
-import { ModalService } 		from './services/modal.service';
-import { BeartModalComponent } 	from './ui-elements/beart-modal/beart-modal.component';
+import { Component, OnInit } from '@angular/core';
+import { ModalService } from './services/modal.service';
+import { BeartModalComponent } from './ui-elements/beart-modal/beart-modal.component';
 
-import { ToastrService } 		from 'ngx-toastr';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +28,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._searchList = [ 
+    this._searchList = [
       {
           id: 'radiobutton',
           label: 'Beef',
@@ -57,20 +55,20 @@ export class AppComponent implements OnInit {
 
   addSubmitAttemptedTrigger() {
 
-    var submitForm = document.getElementById('form');
+    const submitForm = document.getElementById('form');
 
-    var inputValueFirstName = (<HTMLInputElement>document.getElementById('first-name')).value;
-    var inputValueSurname = (<HTMLInputElement>document.getElementById('surname')).value;
-    alert("Hello! I am an alert box and I use your input \n\r Firstname: " + inputValueFirstName + " \n\r Surname: " + inputValueSurname);
+    const inputValueFirstName = (<HTMLInputElement>document.getElementById('first-name')).value;
+    const inputValueSurname = (<HTMLInputElement>document.getElementById('surname')).value;
+    alert('Hello! I am an alert box and I use your input \n\r Firstname: ' + inputValueFirstName + ' \n\r Surname: ' + inputValueSurname);
 
     submitForm.classList.add('_submit-attempted');
   }
 
   // OPEN MODAL WITH COMPONENT INCLUDED
   initLoginModal() {
-    let inputs = {
+    const inputs = {
       isMobile: false
-    }
+    };
     this._modalService.init(BeartModalComponent, inputs, {});
   }
 

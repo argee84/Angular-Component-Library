@@ -1,12 +1,12 @@
 import {
-	Component,
-	OnInit,
-	ViewEncapsulation } 	from '@angular/core';
-import { } 					from "angular-star-rating";
+  Component,
+  OnInit,
+  ViewEncapsulation } from '@angular/core';
+import { } from 'angular-star-rating';
 import {
-	ClickEvent,
-	HoverRatingChangeEvent,
-	RatingChangeEvent } 	from 'angular-star-rating';
+  ClickEvent,
+  HoverRatingChangeEvent,
+  RatingChangeEvent } from 'angular-star-rating';
 
 @Component({
   selector: 'beart-star-rating',
@@ -37,14 +37,14 @@ export class BeartStarRatingComponent implements OnInit {
 
     this._ratingInput = this.onClickResult.rating.toString();
     this._actualRating = this._ratingInput;
-  };
+  }
 
   onRatingChange = ($event: RatingChangeEvent) => {
     // console.log('onRatingUpdated $event: ', $event);
     this.onRatingChangeResult = $event;
 
     this._ratingInput = this.onRatingChangeResult.rating.toString();
-  };
+  }
 
   onHoverRatingChange = ($event: HoverRatingChangeEvent) => {
     // console.log('onHoverRatingChange $event: ', $event);
@@ -55,5 +55,5 @@ export class BeartStarRatingComponent implements OnInit {
     } else {
       this._ratingInput = this._actualRating;
     }
-  };
+  }
 }
