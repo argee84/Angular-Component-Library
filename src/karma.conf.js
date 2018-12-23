@@ -25,7 +25,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: [process.env.CI === 'true' ? 'chrome_without_sandbox' : 'Chrome'],
+    customLaunchers: {
+      chrome_without_sandbox: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      },
+    },
     singleRun: false
   });
 };
