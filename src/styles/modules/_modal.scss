@@ -8,7 +8,7 @@
     display:block;
 }
 
-#modal-wrapper {
+#modal {
     position: fixed;
     top: 0;
     right: 0;
@@ -16,28 +16,28 @@
     left: 0;
     z-index: 100;
     overflow: auto;
-}
 
-#modal-container {
-    position:  absolute; //fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: $white;
-    text-align: center;
-    box-shadow: $box-shadow;
-    z-index: 100;
-}
+    &-content {
+        position:  absolute;;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $white;
+        text-align: center;
+        box-shadow: $box-shadow;
+        z-index: 100;
+    }
 
-#overlay {
-    position: fixed; //absolute;
-    top: 0px;
-    left:  0px;
-    right: 0px;
-    bottom: 0px;
-    z-index:  99;
-    background-color: $modal-overlay;
-    width:  100%;
-    height: auto; //100%;
-    min-height: 100%;
+    &-overlay {
+        position: fixed;
+        top: 0px;
+        left:  0px;
+        right: 0px;
+        bottom: 0px;
+        z-index:  99;
+        background-color: $modal-overlay;
+        width:  100%;
+        height: auto;
+        min-height: 100%;
+    }
 }

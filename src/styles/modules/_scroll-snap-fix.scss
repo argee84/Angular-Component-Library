@@ -16,11 +16,6 @@ section.scroll-snap-wrapper {
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
         /*
-        Enables the Scroll Snapping,
-        saying it is mandatory (hard snap)
-        */
-        scroll-snap-type: mandatory;
-        /*
         Make a Native Smooth Scrolling work: /native_smooth_scrolling/
         After that browser starts to scroll blocks
         when you use anchors: http://help.typepad.com/anchor-tags.html
@@ -56,6 +51,11 @@ section.scroll-snap-wrapper {
         /* alternativ overflow for chrome */
         overflow-x: overlay;
         /*
+        Enables the Scroll Snapping,
+        saying it is mandatory (hard snap)
+        */
+        scroll-snap-type: x mandatory;
+        /*
         Sets the scroll snapping to the each point which is
         on the X*GALLERY_WIDTH distance horizontally from start.
         Images width are the same as containers.
@@ -65,7 +65,7 @@ section.scroll-snap-wrapper {
         /* older spec implementation */
         scroll-snap-destination: 0% 100%;
         /* set horizontal spacing 0 */
-        font-size: 0; 
+        font-size: 0;
         .page {
             scroll-snap-align: start;
             width: 100%;
@@ -79,6 +79,11 @@ section.scroll-snap-wrapper {
         overflow-y: auto;
         /* alternativ overflow for chrome */
         overflow-y: overlay;
+        /*
+        Enables the Scroll Snapping,
+        saying it is mandatory (hard snap)
+        */
+        scroll-snap-type: y mandatory;
         /*
         Sets the scroll snapping to the each point which is
         on the X*GALLERY_WIDTH distance horizontally from start.

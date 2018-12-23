@@ -13,13 +13,13 @@
 
 $checkbox-width: 20px;
 
-.checkbox-container {
+.checkbox {
     display: flex;
     align-items: center;
     &.disabled {
       @extend %disabled;
     }
-    .checkbox {
+    &--box {
         width: $checkbox-width;
         position: relative;
         display: inline-block;

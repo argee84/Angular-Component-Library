@@ -9,13 +9,13 @@ form {
         margin-right: 2em;
     }
 }
-.radiobutton-container {
+.radiobutton {
     display: flex;
     align-items: center;
     &.disabled {
       @extend %disabled;
     }
-    .radiobutton {
+    &--button {
         width: 20px;
         position: relative;
         display: inline-block;

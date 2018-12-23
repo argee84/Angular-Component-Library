@@ -2,156 +2,122 @@
 * ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
 
+$btn-config: 'accept'$green, 'warning'$orange, 'danger'$red;
+
 button.button {
-  display: inline-block;
-  height: $btn-height;
-  padding: 6px 30px 0;
-  background-color: $grey;
-  border: 1px solid $grey;
-  border-radius: $btn-radius;
-  box-sizing: border-box;
-  box-shadow: none;
-  cursor: pointer;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  color: $white;
-  font-size: 0.85em;
-  transition: all .5s ease;
-  transition-property: border-color,background-color,color;
-  &:hover,
-  &.active {
-    background-color: $primary;
-    border-color: $primary;
-    outline: 0;
+    display: inline-block;
+    height: $btn-height;
+    padding: 6px 30px 0;
+    background-color: $grey;
+    border: 1px solid $grey;
+    border-radius: $btn-radius;
+    box-sizing: border-box;
+    box-shadow: none;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
     color: $white;
-  }
+    font-size: 0.85em;
+    transition: all .5s ease;
+    transition-property: border-color, background-color, color;
 
-  &.no-fill {
-    color: $grey;
-    background-color: transparent;
-    &:hover {
-      color: $white;
-      background-color: $primary;
-    }
-  }
-
-  &.accept {
-    background-color: $green;
-    border-color: $green;
-    &:hover {
-      background-color: $white;
-      color: $green;
-    }
-    // &.active {
-    //   background-color: $green;
-    //   border-color: $green;
-    // }
-    &.no-fill {
-      color: $green;
-      background-color: transparent;
-      &:hover {
+    &:hover,
+    &.active {
+        background-color: $primary;
+        border-color: $primary;
+        outline: 0;
         color: $white;
-        background-color: $green;
-      }
     }
-  }
 
-  &.warning {
-    background-color: $orange;
-    border-color: $orange;
-    &:hover {
-      background-color: $white;
-      color: $orange;
-    }
-    // &.active {
-    //   background-color: $green;
-    //   border-color: $green;
+    // &:focus {
+    //   border-color: $primary;
     // }
-    &.no-fill {
-      color: $green;
-      background-color: transparent;
-      &:hover {
-        color: $white;
-        background-color: $green;
-      }
-    }
-  }
 
-  &.cancel {
-    background-color: $red;
-    border-color: $red;
-    &:hover {
-      background-color: $white;
-      color: $red;
+    &:disabled {
+        @extend %disabled;
     }
-    // &.active {  
-    //   color: $white;
-    //   background-color: $red;
-    //   border-color: $red;
-    // }
-    &.no-fill {
-      color: $red;
-      background-color: transparent;
-      &:hover {
-        color: $white;
-        background-color: $red;
-      }
+
+    &.ghost {
+        color: $grey;
+        background-color: transparent;
+
+        &:hover {
+            color: $white;
+            background-color: $primary;
+        }
     }
-  }
 
-  // &:focus {
-  //   border-color: $primary;
-  // }
+    @each $tuple in $btn-config {
+        &.#{nth($tuple, 1)} {
+            background-color: nth($tuple, 2);
+            border-color: nth($tuple, 2);
 
-  &:disabled {
-    @extend %disabled;
-  }
-}
+            &:hover {
+                background-color: $white;
+                color: nth($tuple, 2);
+            }
 
-button.button-icon {
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 50%;
-  text-align: center;
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  transition: all .5s ease;
-  transition-property: box-shadow,transform;
-  svg-icon {
-    width: 14px;
-    svg {
-      vertical-align: middle;
+            &.ghost {
+            color: nth($tuple, 2);
+            background-color: transparent;
+
+                &:hover {
+                    color: $white;
+                    background-color: nth($tuple, 2);
+                }
+            }
+        }
     }
-  }
-  &:hover {
-    box-shadow: 1px 1px 10px 0 $alphahover;
-    transform: scale(1.05);
-  }
-  &:active {
-    transform: scale(.98);
-  }
-  &.accept {
-    background-color: $green;
-    border-color: $green;
-  }
-  &.cancel {
-    background-color: $red;
-    border-color: $red;
-  }
+
+    &-icon {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+        border-radius: 50%;
+        text-align: center;
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        transition: all .5s ease;
+        transition-property: box-shadow, transform;
+
+        svg-icon {
+            width: 14px;
+
+            svg {
+                vertical-align: middle;
+            }
+        }
+
+        &:hover {
+            box-shadow: 1px 1px 10px 0 $alphahover;
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(.98);
+        }
+
+        @each $tuple in $btn-config {
+            &.#{nth($tuple, 1)} {
+                background-color: nth($tuple, 2);
+                border-color: nth($tuple, 2);
+            }
+        }
+    }
 }
 
 @media (#{$bp-larger-than-tablet}) {
-  button.button {
-    // FIX VERTICAL TEXT CENTER FOR DESKTOP
-    padding-top: 2px; 
-  }
-  button.button-icon svg-icon {
-    padding-bottom: 4px;
-  }
+    button.button {
+        // FIX VERTICAL TEXT CENTER FOR DESKTOP
+        padding-top: 2px;
+    }
+
+    button.button-icon svg-icon {
+        padding-bottom: 4px;
+    }
 }

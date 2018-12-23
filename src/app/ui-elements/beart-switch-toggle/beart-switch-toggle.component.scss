@@ -3,13 +3,13 @@
 /* TOOGLE-SWITCH
 * ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-.toggle-switch-container {
+.toggle-switch {
     display: flex;
     align-items: center;
     &.disabled {
       @extend %disabled;
     }
-    .toggle-switch {
+    &--button {
         width: 43px;
         height: 18px;
         margin-top: 3px;

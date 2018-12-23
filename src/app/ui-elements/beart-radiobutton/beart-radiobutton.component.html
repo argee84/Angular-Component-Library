@@ -1,10 +1,10 @@
 <form>
     <div
         *ngFor="let radioButtonList of radioButtonList"
-        class="radiobutton-container"
+        class="radiobutton"
         [ngClass]="{'disabled': radioButtonList.disabled}">
 
-        <div class="radiobutton">
+        <div class="radiobutton--button">
             <input
                 id="{{radioButtonList.id}}"
                 type="radio"

@@ -135,8 +135,9 @@
         <div class="align-h-container">
             <button class="button">Button</button>
             <button class="button accept">Okay</button>
-            <button class="button cancel">Cancel</button>
-            <button class="button no-fill">Button</button>
+            <button class="button warning">Warning</button>
+            <button class="button danger">Cancel</button>
+            <button class="button ghost">Button</button>
             <button class="button" disabled>Disabled</button>
             <button class="button-icon accept"><svg-icon src="assets/gfx/plus-icon.svg"></svg-icon></button>
         </div>
@@ -502,7 +503,7 @@
 </main>
 
 <!-- Custom modal setup -->
-<div id="modal-wrapper" class="hidden">
-    <div id="modal-container" class="hidden"></div>
-    <div id="overlay" (click)="removeModal()" class="hidden"></div>
+<div id="modal" class="hidden">
+    <div id="modal-content" class="hidden"></div>
+    <div id="modal-overlay" (click)="removeModal()" class="hidden"></div>
 </div>
