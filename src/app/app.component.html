@@ -1,450 +1,573 @@
 <header>
-    <!-- Navigationbar ======================================================================== -->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <nav>
-        <!-- Logo ======================================================================== -->
-        <div class="logo-wrapper">
-            <a class="logo">
-                <div class="logo-img" alt="netvico"></div>
-            </a>
-        </div>
+  <!-- Navigationbar ======================================================================== -->
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <nav>
+    <!-- Logo ======================================================================== -->
+    <div class="logo-wrapper">
+      <a class="logo">
+        <div
+          class="logo-img"
+          alt="netvico"
+        ></div>
+      </a>
+    </div>
 
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="label-toggle"></label>
+    <input
+      type="checkbox"
+      id="menu-toggle"
+    />
+    <label
+      for="menu-toggle"
+      class="label-toggle"
+    ></label>
 
-        <!-- Logo / End -->
-        <ul class="nav-container">
-            <li>
-                <a><span>Lorem</span></a>
-            </li>
+    <!-- Logo / End -->
+    <ul class="nav-container">
+      <li>
+        <a><span>Lorem</span></a>
+      </li>
 
-            <li>
-                <a><span>Ipsum</span></a>
-            </li>
+      <li>
+        <a><span>Ipsum</span></a>
+      </li>
 
-            <li>
-                <a><span>Serum</span></a>
-                <ul>
-                    <li>
-                        <a>SubItem1</a>
-                    </li>
-                    <li>
-                        <a>SubItem2</a>
-                    </li>
-                    <li>
-                        <a>SubItem3</a>
-                        <ul>
-                            <li>
-                                <a>SubSubItem1</a>
-                            </li>
-                            <li>
-                                <a>SubSubItem2</a>
-                            </li>
-                            <li>
-                                <a>SubSubItem3</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="logout">
-                <a><i class="nav-icon logout-icon"></i></a>
-            </li>
+      <li>
+        <a><span>Serum</span></a>
+        <ul>
+          <li>
+            <a>SubItem1</a>
+          </li>
+          <li>
+            <a>SubItem2</a>
+          </li>
+          <li>
+            <a>SubItem3</a>
+            <ul>
+              <li>
+                <a>SubSubItem1</a>
+              </li>
+              <li>
+                <a>SubSubItem2</a>
+              </li>
+              <li>
+                <a>SubSubItem3</a>
+              </li>
+            </ul>
+          </li>
         </ul>
-    </nav>
-    <!-- Navigationbar / End -->
+      </li>
+
+      <li class="logout">
+        <a><i class="nav-icon logout-icon"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Navigationbar / End -->
 </header>
 
 
 <main>
-    <!-- Checkbox ======================================================================== -->
+  <!-- Checkbox ======================================================================== -->
 
-    <div id="checkbox-wrapper">
-        <h4>Checkbox</h4>
-        <div class="align-h-container">
-            <beart-checkbox
-                [checkBoxId]="'checkbox'"
-                [isDisabled]="false"
-                [(isChecked)]="_isCheckboxChecked">inactive checkbox</beart-checkbox>
+  <div id="checkbox-wrapper">
+    <h4>Checkbox</h4>
+    <div class="align-h-container">
+      <beart-checkbox
+        [checkBoxId]="'checkbox'"
+        [isDisabled]="false"
+        [(isChecked)]="_isCheckboxChecked"
+      >inactive checkbox</beart-checkbox>
 
-            <beart-checkbox
-                [checkBoxId]="'checkbox-active'"
-                [isDisabled]="false"
-                [isChecked]="true">active checkbox</beart-checkbox>
+      <beart-checkbox
+        [checkBoxId]="'checkbox-active'"
+        [isDisabled]="false"
+        [isChecked]="true"
+      >active checkbox</beart-checkbox>
 
-            <beart-checkbox
-                [checkBoxId]="'checkbox-disabled'"
-                [isDisabled]="true"
-                [isChecked]="false">disabled checkbox</beart-checkbox>
-        </div>
-        <div class="align-h-container">
-            <p>1st checkbox is checked: {{this._isCheckboxChecked}}</p>
-        </div>
+      <beart-checkbox
+        [checkBoxId]="'checkbox-disabled'"
+        [isDisabled]="true"
+        [isChecked]="false"
+      >disabled checkbox</beart-checkbox>
     </div>
-
-    <!-- Checkbox / End -->
-
-    <!-- Radiobutton ======================================================================== -->
-
-    <div id="radiobutton-wrapper">
-        <h4>Radiobutton</h4>
-        <div class="align-h-container">
-            <beart-radiobutton
-                [radioButtonList]="_searchList"
-                [(isSelected)]="_isRadioSelected">inactive radiobutton</beart-radiobutton>
-        </div>
-        <div class="align-h-container">
-            <p>Selected radiobutton value: {{this._isRadioSelected}}</p>
-        </div>
+    <div class="align-h-container">
+      <p>1st checkbox is checked: {{this._isCheckboxChecked}}</p>
     </div>
+  </div>
 
-    <!-- Radiobutton / End -->
+  <!-- Checkbox / End -->
 
-    <!-- Switch Toggle ====================================================================== -->
+  <!-- Radiobutton ======================================================================== -->
 
-    <div id="switch-wrapper">
-        <h4>Toggle switch</h4>
-        <div class="align-h-container">
-            <beart-switch-toggle
-                [switchToggleId]="'switch-toggle'"
-                [isDisabled]="false"
-                [(isSwitched)]="_isToggleSwitched">inactive switch-toggle</beart-switch-toggle>
+  <div id="radiobutton-wrapper">
+    <h4>Radiobutton</h4>
+    <div class="align-h-container">
+      <beart-radiobutton
+        [radioButtonList]="_searchList"
+        [(isSelected)]="_isRadioSelected"
+      >inactive radiobutton</beart-radiobutton>
+    </div>
+    <div class="align-h-container">
+      <p>Selected radiobutton value: {{this._isRadioSelected}}</p>
+    </div>
+  </div>
 
-            <beart-switch-toggle
-                [switchToggleId]="'switch-toggle-active'"
-                [isDisabled]="false"
-                [isSwitched]="true">active switch-toggle</beart-switch-toggle>
+  <!-- Radiobutton / End -->
 
-            <beart-switch-toggle
-                [switchToggleId]="'switch-toggle-disabled'"
-                [isDisabled]="true"
-                [isSwitched]="disabled">disabled switch-toggle</beart-switch-toggle>
+  <!-- Switch Toggle ====================================================================== -->
+
+  <div id="switch-wrapper">
+    <h4>Toggle switch</h4>
+    <div class="align-h-container">
+      <beart-switch-toggle
+        [switchToggleId]="'switch-toggle'"
+        [isDisabled]="false"
+        [(isSwitched)]="_isToggleSwitched"
+      >inactive switch-toggle</beart-switch-toggle>
+
+      <beart-switch-toggle
+        [switchToggleId]="'switch-toggle-active'"
+        [isDisabled]="false"
+        [isSwitched]="true"
+      >active switch-toggle</beart-switch-toggle>
+
+      <beart-switch-toggle
+        [switchToggleId]="'switch-toggle-disabled'"
+        [isDisabled]="true"
+        [isSwitched]="disabled"
+      >disabled switch-toggle</beart-switch-toggle>
+    </div>
+    <div class="align-h-container">
+      <p>1st toggle-switch is checked: {{this._isToggleSwitched}}</p>
+    </div>
+  </div>
+
+  <!-- Switch Toggle / End -->
+
+  <!-- Buttons ============================================================================ -->
+
+  <div id="button-wrapper">
+    <h4>Buttons</h4>
+    <div class="align-h-container">
+      <button class="button">Button</button>
+      <button class="button accept">Okay</button>
+      <button class="button warning">Warning</button>
+      <button class="button danger">Cancel</button>
+      <button class="button ghost">Button</button>
+      <button
+        class="button"
+        disabled
+      >Disabled</button>
+      <button class="button-icon accept">
+        <svg-icon src="assets/gfx/plus-icon.svg"></svg-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Buttons / End -->
+
+  <!-- Nav Tab  =========================================================================== -->
+
+  <div id="nav-tabs-wrapper">
+    <h4>Tabbar</h4>
+    <div class="tabbar">
+      <button
+        [ngClass]="{'active': _isSelected.currentTab == 'default'}"
+        (click)="refreshTab('default')"
+      >
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Active</span>
+      </button>
+      <button
+        [ngClass]="{'active': _isSelected.currentTab == 'one'}"
+        (click)="refreshTab('one')"
+      >
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span>
+      </button>
+      <button
+        [ngClass]="{'active': _isSelected.currentTab == 'two'}"
+        (click)="refreshTab('two')"
+      >
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span>
+      </button>
+      <button
+        [ngClass]="{'active': _isSelected.currentTab == 'threet'}"
+        (click)="refreshTab('three')"
+      >
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span>
+      </button>
+      <button
+        [ngClass]="{'active': _isSelected.currentTab == 'four'}"
+        (click)="refreshTab('four')"
+      >
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span>
+      </button>
+      <button class="disabled">
+        <svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Disabled</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Nav Tab / End -->
+
+  <!-- Forms ======================================================================== -->
+  <div id="form-wrapper">
+    <h4>Forms</h4>
+    <beart-search [placeholder]="'Search..'"></beart-search>
+    <form id="form">
+      <fieldset>
+        <div class="select-wrapper">
+          <select required>
+            <option
+              value=""
+              disabled
+              selected
+              hidden
+            >Please select</option>
+            <option value="Mr">Mr.</option>
+            <option value="Mrs">Mrs.</option>
+          </select>
         </div>
         <div class="align-h-container">
-            <p>1st toggle-switch is checked: {{this._isToggleSwitched}}</p>
+          <div class="valid-input">
+            <input
+              id="first-name"
+              type="text"
+              placeholder="First name*"
+              value=""
+              required
+            >
+            <span class="tooltip">Required</span>
+          </div>
+          <div class="valid-input">
+            <input
+              id="surname"
+              type="text"
+              placeholder="Surname*"
+              value=""
+              required
+            >
+            <span class="tooltip">Required</span>
+          </div>
         </div>
-    </div>
-
-    <!-- Switch Toggle / End -->
-
-    <!-- Buttons ============================================================================ -->
-
-    <div id="button-wrapper">
-        <h4>Buttons</h4>
         <div class="align-h-container">
-            <button class="button">Button</button>
-            <button class="button accept">Okay</button>
-            <button class="button warning">Warning</button>
-            <button class="button danger">Cancel</button>
-            <button class="button ghost">Button</button>
-            <button class="button" disabled>Disabled</button>
-            <button class="button-icon accept"><svg-icon src="assets/gfx/plus-icon.svg"></svg-icon></button>
+          <input
+            type="text"
+            placeholder="Street"
+          >
+          <input
+            type="number"
+            placeholder="No."
+          >
         </div>
-    </div>
-
-    <!-- Buttons / End -->
-
-    <!-- Nav Tab  =========================================================================== -->
-
-    <div id="nav-tabs-wrapper">
-        <h4>Tabbar</h4>
-        <div class="tabbar">
-            <button [ngClass]="{'active': _isSelected.currentTab == 'default'}"
-                    (click)="refreshTab('default')"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Active</span></button>
-            <button [ngClass]="{'active': _isSelected.currentTab == 'one'}"
-                    (click)="refreshTab('one')"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span></button>
-            <button [ngClass]="{'active': _isSelected.currentTab == 'two'}"
-                    (click)="refreshTab('two')"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span></button>
-            <button [ngClass]="{'active': _isSelected.currentTab == 'threet'}"
-                    (click)="refreshTab('three')"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span></button>
-            <button [ngClass]="{'active': _isSelected.currentTab == 'four'}"
-                    (click)="refreshTab('four')"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Inactive</span></button>
-            <button class="disabled"><svg-icon src="assets/gfx/kpi-icon.svg"></svg-icon><span>Disabled</span></button>
-        </div>
-    </div>
-
-    <!-- Nav Tab / End -->
-
-    <!-- Forms ======================================================================== -->
-    <div id="form-wrapper">
-        <h4>Forms</h4>
-        <beart-search
-            [placeholder]="'Search..'"></beart-search>
-        <form id="form">
-            <fieldset>
-            <div class="select-wrapper">
-                <select required>
-                    <option value="" disabled selected hidden>Please select</option>
-                    <option value="Mr">Mr.</option>
-                    <option value="Mrs">Mrs.</option>
-                </select>
-            </div>
-            <div class="align-h-container">
-                <div class="valid-input">
-                    <input id="first-name" type="text" placeholder="First name*" value="" required>
-                    <span class="tooltip">Required</span>
-                </div>
-                <div class="valid-input">
-                    <input id="surname" type="text" placeholder="Surname*" value="" required>
-                    <span class="tooltip">Required</span>
-                </div>
-            </div>
-            <div class="align-h-container">
-                <input type="text" placeholder="Street">
-                <input type="number" placeholder="No.">
-            </div>
-            <div class="align-h-container">
-                <input type="email" placeholder="email">
-                <input type="tel" placeholder="tel">
-                <input type="url" placeholder="url">
-                <input type="password" placeholder="password">
-            </div>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-            <input type="submit" (click)="addSubmitAttemptedTrigger()">
-            </fieldset>
-        </form>
-    </div>
-
-    <!-- Forms / End -->
-
-    <!-- Search Filter Dropdown ============================================================== -->
-
-    <div id="search-filter-wrapper">
-        <h4>Search Filter Dropdown</h4>
         <div class="align-h-container">
-            <beart-search-filter-dropdown
-                [isDisabled]="false"
-                [placeholder]="'Search..'"
-                [listItems]="['2Pac', 'Biggie', 'NAS', 'Dre']"
-                (isItemSelected)="this._isSearchSelected = $event"></beart-search-filter-dropdown>
-            <p>Search-filter result: {{this._isSearchSelected}}</p>
+          <input
+            type="email"
+            placeholder="email"
+          >
+          <input
+            type="tel"
+            placeholder="tel"
+          >
+          <input
+            type="url"
+            placeholder="url"
+          >
+          <input
+            type="password"
+            placeholder="password"
+          >
         </div>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+        <input
+          type="submit"
+          (click)="addSubmitAttemptedTrigger()"
+        >
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- Forms / End -->
+
+  <!-- Search Filter Dropdown ============================================================== -->
+
+  <div id="search-filter-wrapper">
+    <h4>Search Filter Dropdown</h4>
+    <div class="align-h-container">
+      <beart-search-filter-dropdown
+        [isDisabled]="false"
+        [placeholder]="'Search..'"
+        [listItems]="['2Pac', 'Biggie', 'NAS', 'Dre']"
+        (isItemSelected)="this._isSearchSelected = $event"
+      ></beart-search-filter-dropdown>
+      <p>Search-filter result: {{this._isSearchSelected}}</p>
     </div>
+  </div>
 
-    <!-- Search Filter Dropdown / End -->
+  <!-- Search Filter Dropdown / End -->
 
-    <!-- Modal ============================================================================== -->
+  <!-- Modal ============================================================================== -->
 
-    <div id="modal-dialog-wrapper">
-        <h4>Modal</h4>
-        <div class="align-h-container">
-            <button (click)="initLoginModal()">open modal</button>
-        </div>
+  <div id="modal-dialog-wrapper">
+    <h4>Modal</h4>
+    <div class="align-h-container">
+      <button (click)="initLoginModal()">open modal</button>
     </div>
+  </div>
 
-    <!-- Modal / End -->
+  <!-- Modal / End -->
 
-    <!-- Toast ============================================================================== -->
+  <!-- Toast ============================================================================== -->
 
-    <div id="toast-wrapper">
-        <h4>Toast</h4>
-        <div class="align-h-container">
-            <!--
+  <div id="toast-wrapper">
+    <h4>Toast</h4>
+    <div class="align-h-container">
+      <!--
                 IMPORTANT: FIRST INSTALL DIRECTIVE !!!!
                 https://github.com/scttcper/ngx-toastr
             -->
-            <button (click)="showSuccess()">success toast</button>
-            <button (click)="showWarning()">warning toast</button>
-            <button (click)="showError()">error toast</button>
-        </div>
+      <button (click)="showSuccess()">success toast</button>
+      <button (click)="showWarning()">warning toast</button>
+      <button (click)="showError()">error toast</button>
     </div>
+  </div>
 
-    <!-- Toast / End -->
+  <!-- Toast / End -->
 
-    <!-- Star Rating ======================================================================== -->
+  <!-- Star Rating ======================================================================== -->
 
-    <div id="star-rating-wrapper">
+  <!-- <div id="star-rating-wrapper">
         <h4>Star Rating</h4>
-        <div class="align-h-container">
-            <!--
+        <div class="align-h-container"> -->
+  <!--
                 IMPORTANT: FIRST INSTALL DIRECTIVE !!!!
                 https://github.com/BioPhoton/angular-star-rating/wiki/Installing
             -->
-            <beart-star-rating></beart-star-rating>
+  <!-- <beart-star-rating></beart-star-rating>
         </div>
-    </div>
+    </div> -->
 
-    <!-- Star Rating / End -->
+  <!-- Star Rating / End -->
 
-    <!-- Datepicker ======================================================================== -->
+  <!-- Datepicker ======================================================================== -->
 
-    <!-- <div id="datepicker-wrapper">
+  <!-- <div id="datepicker-wrapper">
         <h4>Datepicker</h4>
         <div class="align-h-container">
 
         </div>
     </div> -->
 
-    <!-- Datepicker / End -->
+  <!-- Datepicker / End -->
 
-    <!-- Charts ======================================================================== -->
+  <!-- Charts ======================================================================== -->
 
-    <div class="charts-wrapper">
-        <div class="align-h-container">
-            <!-- Pie Chart ======================================================================== -->
+  <div class="charts-wrapper">
+    <div class="align-h-container">
+      <!-- Pie Chart ======================================================================== -->
 
-            <div id="piechart-wrapper">
-                <h4>Piechart</h4>
-                <beart-piechart
-                    [dataValue]="68">Test</beart-piechart>
-            </div>
+      <div id="piechart-wrapper">
+        <h4>Piechart</h4>
+        <beart-piechart [dataValue]="68">Test</beart-piechart>
+      </div>
 
-            <!-- Pie Chart / End -->
+      <!-- Pie Chart / End -->
 
 
-            <!-- Bar Chart ======================================================================== -->
+      <!-- Bar Chart ======================================================================== -->
 
-            <div id="barchart-wrapper">
-                <h4>Barchart</h4>
-                <beart-progressbar
-                    [dataValue]="98">Test</beart-progressbar>
-            </div>
+      <div id="barchart-wrapper">
+        <h4>Barchart</h4>
+        <beart-progressbar [dataValue]="98">Test</beart-progressbar>
+      </div>
 
-            <!-- Bar Chart / End -->
+      <!-- Bar Chart / End -->
 
-        </div>
     </div>
+  </div>
 
-    <!-- Charts / End -->
+  <!-- Charts / End -->
 
-    <!-- Table ======================================================================== -->
+  <!-- Table ======================================================================== -->
 
-    <div id="table-wrapper">
-        <h4>Table with fixed header and filterarea</h4>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <!-- Table Headline -->
-                    <tr>
-                        <th></th>
-                        <th class="cell-1">Standort Id</th>
-                        <th class="cell-2">Standort Name</th>
-                        <th class="cell-3">Ort</th>
-                        <th class="cell-4">Kategorie</th>
-                    </tr>
-                    <!-- Table Headline / End -->
+  <div id="table-wrapper">
+    <h4>Table with fixed header and filterarea</h4>
+    <div class="table-container">
+      <table>
+        <thead>
+          <!-- Table Headline -->
+          <tr>
+            <th></th>
+            <th class="cell-1">Standort Id</th>
+            <th class="cell-2">Standort Name</th>
+            <th class="cell-3">Ort</th>
+            <th class="cell-4">Kategorie</th>
+          </tr>
+          <!-- Table Headline / End -->
 
-                    <!-- Table Filter Area -->
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-all'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">
-                            <form class="erasable-search">
-                                <input type="search" name="focus" />
-                                <button type="reset"><svg-icon class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon></button>
-                            </form>
-                        </td>
-                        <td class="cell-2">
-                            <form class="erasable-search">
-                                <input type="search" name="focus" />
-                                <button type="reset"><svg-icon class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon></button>
-                            </form>
-                        </td>
-                        <td class="cell-3">
-                            <form class="erasable-search">
-                                <input type="search" name="focus" />
-                                <button type="reset"><svg-icon class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon></button>
-                            </form>
-                        </td>
-                        <td class="cell-4">
-                            <form class="erasable-search">
-                                <input type="search" name="focus" />
-                                <button type="reset"><svg-icon class="erase-icon" src="assets/gfx/erase-icon.svg"></svg-icon></button>
-                            </form>
-                        </td>
-                    </tr>
-                    <!-- Table Filter Area / End -->
-                </thead>
-                <!-- Table Body Content-->
-                <tbody>
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-1'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
+          <!-- Table Filter Area -->
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-all'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">
+              <form class="erasable-search">
+                <input
+                  type="search"
+                  name="focus"
+                />
+                <button type="reset">
+                  <svg-icon
+                    class="erase-icon"
+                    src="assets/gfx/erase-icon.svg"
+                  ></svg-icon>
+                </button>
+              </form>
+            </td>
+            <td class="cell-2">
+              <form class="erasable-search">
+                <input
+                  type="search"
+                  name="focus"
+                />
+                <button type="reset">
+                  <svg-icon
+                    class="erase-icon"
+                    src="assets/gfx/erase-icon.svg"
+                  ></svg-icon>
+                </button>
+              </form>
+            </td>
+            <td class="cell-3">
+              <form class="erasable-search">
+                <input
+                  type="search"
+                  name="focus"
+                />
+                <button type="reset">
+                  <svg-icon
+                    class="erase-icon"
+                    src="assets/gfx/erase-icon.svg"
+                  ></svg-icon>
+                </button>
+              </form>
+            </td>
+            <td class="cell-4">
+              <form class="erasable-search">
+                <input
+                  type="search"
+                  name="focus"
+                />
+                <button type="reset">
+                  <svg-icon
+                    class="erase-icon"
+                    src="assets/gfx/erase-icon.svg"
+                  ></svg-icon>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <!-- Table Filter Area / End -->
+        </thead>
+        <!-- Table Body Content-->
+        <tbody>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-1'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
 
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-2'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-3'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-4'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-5'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <beart-checkbox
-                                [checkBoxId]="'checkbox-6'"
-                                [isDisabled]="false"
-                                [isChecked]="false"></beart-checkbox>
-                        </td>
-                        <td class="cell-1">1</td>
-                        <td class="cell-2">2</td>
-                        <td class="cell-3">3</td>
-                        <td class="cell-4">4</td>
-                    </tr>
-                </tbody>
-                <!-- Table Body Content / End -->
-            </table>
-        </div>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-2'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-3'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-4'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-5'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
+          <tr>
+            <td>
+              <beart-checkbox
+                [checkBoxId]="'checkbox-6'"
+                [isDisabled]="false"
+                [isChecked]="false"
+              ></beart-checkbox>
+            </td>
+            <td class="cell-1">1</td>
+            <td class="cell-2">2</td>
+            <td class="cell-3">3</td>
+            <td class="cell-4">4</td>
+          </tr>
+        </tbody>
+        <!-- Table Body Content / End -->
+      </table>
     </div>
+  </div>
 
-    <!-- Table / End -->
+  <!-- Table / End -->
 
-    <!-- Snap Scroll ======================================================================== -->
-    <!--
+  <!-- Snap Scroll ======================================================================== -->
+  <!--
         FIX FOR CHROME BROWSER
         IMPORTANT: FIX ONLY WORKS WITH "scroll-snap-polyfill.js" FILE !!!!
 
@@ -452,58 +575,68 @@
         <script src="assets/js/scroll-snap-polyfill.js" type="text/javascript"></script>
     -->
 
-    <div id="scroll-snap-wrapper">
-            <h4>Scroll snap fix for chrome browser</h4>
-            <h5>Vertical scroll snap</h5>
-            <section class="scroll-snap-wrapper">
-                <div class="doc-scroller-v">
-                    <div class="page one">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page two">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page three">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page four">
-                        <div class="inside">
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <h5>Horizontal scroll snap</h5>
-            <section class="scroll-snap-wrapper">
-                <div class="doc-scroller-h">
-                    <div class="page one">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page two">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page three">
-                        <div class="inside">
-                        </div>
-                    </div>
-                    <div class="page four">
-                        <div class="inside">
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <div id="scroll-snap-wrapper">
+    <h4>Scroll snap fix for chrome browser</h4>
+    <h5>Vertical scroll snap</h5>
+    <section class="scroll-snap-wrapper">
+      <div class="doc-scroller-v">
+        <div class="page one">
+          <div class="inside">
+          </div>
         </div>
+        <div class="page two">
+          <div class="inside">
+          </div>
+        </div>
+        <div class="page three">
+          <div class="inside">
+          </div>
+        </div>
+        <div class="page four">
+          <div class="inside">
+          </div>
+        </div>
+      </div>
+    </section>
+    <h5>Horizontal scroll snap</h5>
+    <section class="scroll-snap-wrapper">
+      <div class="doc-scroller-h">
+        <div class="page one">
+          <div class="inside">
+          </div>
+        </div>
+        <div class="page two">
+          <div class="inside">
+          </div>
+        </div>
+        <div class="page three">
+          <div class="inside">
+          </div>
+        </div>
+        <div class="page four">
+          <div class="inside">
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
-        <!-- Snap Scroll / End -->
+  <!-- Snap Scroll / End -->
 
 </main>
 
 <!-- Custom modal setup -->
-<div id="modal" class="hidden">
-    <div id="modal-content" class="hidden"></div>
-    <div id="modal-overlay" (click)="removeModal()" class="hidden"></div>
+<div
+  id="modal"
+  class="hidden"
+>
+  <div
+    id="modal-content"
+    class="hidden"
+  ></div>
+  <div
+    id="modal-overlay"
+    (click)="removeModal()"
+    class="hidden"
+  ></div>
 </div>

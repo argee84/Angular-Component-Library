@@ -71,7 +71,7 @@ select {
 }
 
 input[type="submit"] {
-    @extend button.button;
+    @extend button, .button;
 }
 
 input[type="submit"]:focus {
