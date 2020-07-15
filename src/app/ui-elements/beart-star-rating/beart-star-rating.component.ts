@@ -1,12 +1,14 @@
 import {
   Component,
   OnInit,
-  ViewEncapsulation } from '@angular/core';
+  ViewEncapsulation
+} from '@angular/core';
 import { } from 'angular-star-rating';
 import {
   ClickEvent,
   HoverRatingChangeEvent,
-  RatingChangeEvent } from 'angular-star-rating';
+  RatingChangeEvent
+} from 'angular-star-rating';
 
 @Component({
   selector: 'beart-star-rating',

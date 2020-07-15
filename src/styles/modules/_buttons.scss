@@ -1,7 +1,6 @@
 /* Buttons
 * ––––––––––––––––––––––––––––––––––––––––––––––––––
 */
-
 $btn-config: 'accept'$green, 'warning'$orange, 'danger'$red;
 
 button.button {
@@ -20,21 +19,19 @@ button.button {
     white-space: nowrap;
     color: $white;
     font-size: 0.85em;
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     transition-property: border-color, background-color, color;
 
-    &:hover,
-    &.active {
+    &.active,
+    &:hover {
         background-color: $primary;
         border-color: $primary;
         outline: 0;
         color: $white;
     }
-
     // &:focus {
     //   border-color: $primary;
     // }
-
     &:disabled {
         @extend %disabled;
     }
@@ -48,7 +45,6 @@ button.button {
             background-color: $primary;
         }
     }
-
     @each $tuple in $btn-config {
         &.#{nth($tuple, 1)} {
             background-color: nth($tuple, 2);
@@ -60,8 +56,8 @@ button.button {
             }
 
             &.ghost {
-            color: nth($tuple, 2);
-            background-color: transparent;
+                color: nth($tuple, 2);
+                background-color: transparent;
 
                 &:hover {
                     color: $white;
@@ -82,14 +78,13 @@ button.button {
         text-align: center;
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
         transition-property: box-shadow, transform;
 
         svg-icon {
-            width: 14px;
-
             svg {
                 vertical-align: middle;
+                width: 14px;
             }
         }
 
@@ -101,7 +96,6 @@ button.button {
         &:active {
             transform: scale(.98);
         }
-
         @each $tuple in $btn-config {
             &.#{nth($tuple, 1)} {
                 background-color: nth($tuple, 2);
@@ -110,7 +104,6 @@ button.button {
         }
     }
 }
-
 @media (#{$bp-larger-than-tablet}) {
     button.button {
         // FIX VERTICAL TEXT CENTER FOR DESKTOP

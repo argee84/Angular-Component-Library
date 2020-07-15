@@ -1,94 +1,66 @@
 /*VARIABLES
 ====================================================*/
-
 /*Range*/
 $minRatingValue: 1;
 $maxNumOfStars: 10;
 $numFractions: 3;
 $fractionSize: $maxNumOfStars/$numFractions;
-
 /*Spacing*/
 $rating-margin-bottom: 5px;
 $default-stars-label-margin: 5px;
-
 /*Colors*/
 $color-negative-rating: #f03c56 !default;
 $color-ok-rating: #ffc058 !default;
 $color-positive-rating: #7ed321 !default;
 $color-default-rating: #999 !default;
-
 /*Sizes*/
-
 //default
 $default-star-width: 20px !default;
 $default-star-height: 20px !default;
-
 $default-star-font-size: 25px !default;
 $default-star-line-height: 25px !default;
-
 $default-label-font-size: 18px !default;
-$default-label-line-height: 18px !default;
-
-//small
+$default-label-line-height: 18px !default; //small
 $small-label-font-size: 9.5px !default;
 $small-label-line-height: 9.5px !default;
-
 $small-star-width: 10px !default;
 $small-star-height: 9, 5px !default;
-
 $small-star-font-size: 11px !default;
-$small-star-line-height: 10px !default;
-
-//medium
+$small-star-line-height: 10px !default; //medium
 $medium-star-width: $default-star-width;
 $medium-star-height: $default-star-height;
-
 $medium-label-font-size: $default-star-width;
 $medium-label-line-height: $default-star-line-height;
-
 $medium-star-font-size: $default-label-font-size;
-$medium-star-line-height: $default-label-line-height;
-
-//large
+$medium-star-line-height: $default-label-line-height; //large
 $large-star-width: 35px !default;
 $large-star-height: 33.3px !default;
-
 $large-star-font-size: 36px !default;
 $large-star-line-height: 35px !default;
-
 $large-label-font-size: 28px !default;
 $large-star-line-height: 28px !default;
-
 /*Animation*/
 $default-animation-speed: 0.3s;
 $slow-animation-speed: 0.8s;
 $immediately-animation-type: none;
 $default-animation-type: ease;
-
 /*Icons*/
 $default-star-character-empty: "\2606";
 $default-star-character-half: "\2605";
 $default-star-character-filled: "\2605";
-
 /*Disabled*/
 $disabled-opacity: 0.5;
-
-
 /*CSS Star Rating Elements
 =================================================================*/
-
 /*HELPER*/
-
 .center-all {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 /*
 Star element
 ==================================================================*/
-
 .star {
     position: relative;
     width: $default-star-width;
@@ -96,8 +68,9 @@ Star element
     display: flex;
     align-items: center;
     justify-content: center;
-    svg,
-    i {
+
+    i,
+    svg {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -107,28 +80,35 @@ Star element
         width: 100%;
         height: 100%;
         font-style: normal;
-        &.star-half,
-        &.star-filled {
+
+        &.star-filled,
+        &.star-half {
             opacity: 0;
         }
     }
+
     i {
         top: 1px;
         display: none;
     }
+
     &.icon i {
         font-size: $default-star-font-size;
         line-height: $default-star-line-height;
+
         &.star-empty:before {
             content: $default-star-character-empty;
         }
+
         &.star-half:before {
             content: $default-star-character-half;
         }
+
         &.star-filled:before {
             content: $default-star-character-filled;
         }
     }
+
     &.custom-icon i {
         font-size: 18px;
         line-height: 18px;
@@ -137,36 +117,41 @@ Star element
   Fill states
   ==================================================================*/
     &.empty {
-        svg,
-        i {
-            &.star-half,
-            &.star-filled {
+        i,
+        svg {
+            &.star-filled,
+            &.star-half {
                 opacity: 0;
             }
+
             &.star-empty {
                 opacity: 1;
             }
         }
     }
+
     &.half {
-        svg,
-        i {
-            &.star-filled,
-            &.star-empty {
+        i,
+        svg {
+            &.star-empty,
+            &.star-filled {
                 opacity: 0;
             }
+
             &.star-half {
                 opacity: 1;
             }
         }
     }
+
     &.filled {
-        svg,
-        i {
+        i,
+        svg {
             &.star-empty,
             &.star-filled {
                 opacity: 0;
             }
+
             &.star-filled {
                 opacity: 1;
             }
@@ -179,30 +164,37 @@ Star element
         svg {
             fill: $color-default-rating;
         }
+
         i {
             color: $color-default-rating;
         }
     }
+
     &.negative {
         svg {
             fill: $color-negative-rating;
         }
+
         i {
             color: $color-negative-rating;
         }
     }
+
     &.ok {
         svg {
             fill: $color-ok-rating;
         }
+
         i {
             color: $color-ok-rating;
         }
     }
+
     &.positive {
         svg {
             fill: $color-positive-rating;
         }
+
         i {
             color: $color-positive-rating;
         }
@@ -214,15 +206,18 @@ Star element
         i {
             display: none;
         }
+
         svg {
             display: flex;
         }
     }
+
     &.custom-icon,
     &.icon {
         svg {
             display: none;
         }
+
         i {
             display: flex;
         }
@@ -233,22 +228,27 @@ Star element
     &.small {
         width: $small-star-width;
         height: $small-star-height;
+
         i {
             font-size: $small-star-font-size;
             line-height: $small-star-line-height;
         }
     }
+
     &.medium {
         width: $default-star-width;
         height: $default-star-width;
+
         i {
             font-size: $default-star-font-size;
             line-height: $default-star-line-height;
         }
     }
+
     &.large {
         width: $large-star-width;
         height: $large-star-height;
+
         i {
             font-size: $large-star-font-size;
             line-height: $large-star-line-height;
@@ -264,27 +264,26 @@ Disabled
   Direction
   =================================================*/
     &.direction-rtl {
-        svg,
-        i {
+        i,
+        svg {
             &.star-half {
                 transform: scale(-1, 1);
             }
         }
     }
+
     &.direction-ltr {
-        svg,
-        i {
+        i,
+        svg {
             &.star-half {
                 transform: scale(1, 1);
             }
         }
     }
 }
-
 /*
 Label Element
 ===================================================================*/
-
 .label-value {
     min-width: 20px;
     font-size: $default-label-font-size;
@@ -296,10 +295,12 @@ Label Element
         font-size: $small-label-font-size;
         line-height: $small-label-line-height;
     }
+
     &.medium {
         font-size: $default-label-font-size;
         line-height: $default-star-line-height;
     }
+
     &.large {
         font-size: $large-label-font-size;
         line-height: $large-star-line-height;
@@ -311,11 +312,9 @@ Label Element
         opacity: $disabled-opacity;
     }
 }
-
 /*
 Star Container
 ==================================================================*/
-
 .star-container {
     display: flex;
     align-items: center;
@@ -324,20 +323,25 @@ Star Container
     margin-left: $default-stars-label-margin;
     margin-right: $default-stars-label-margin;
     transition: all $default-animation-speed $default-animation-type;
+
     +.star {
         margin-left: $default-stars-label-margin;
     }
+
     .star {
         @extend .default;
         transition: all $default-animation-speed $default-animation-type;
-        svg,
-        i {
+
+        i,
+        svg {
             transition: all $default-animation-speed $default-animation-type;
         }
     }
+
     svg {
         z-index: 2;
     }
+
     i {
         z-index: 1;
     }
@@ -346,14 +350,17 @@ Star Container
  ===================================================*/
     &.direction-rtl {
         direction: rtl;
+
         .star {
-            @extend .star.direction-rtl;
+            @extend .star, .direction-rtl;
         }
     }
+
     &.direction-ltr {
         direction: ltr;
+
         .star {
-            @extend .star.direction-ltr;
+            @extend .star, .direction-ltr;
         }
     }
     /*
@@ -363,21 +370,20 @@ Star Container
         flex: 1 1 auto;
         justify-content: center;
     }
+
     &.space-between {
         flex: 1 1 auto;
         justify-content: space-between;
     }
+
     &.space-around {
         flex: 1 1 auto;
         justify-content: space-around;
     }
 }
-
-
 /*
 Rating Component
 ========================================================================= */
-
 .rating {
     display: flex;
     align-items: center;
@@ -391,12 +397,14 @@ Rating Component
                 .star:nth-child(-n+#{$i}) {
                     @extend .filled;
                 }
+
                 .star {
                     cursor: pointer;
                     @if $i <= $fractionSize {
                         svg {
                             fill: $color-negative-rating;
                         }
+
                         i {
                             color: $color-negative-rating;
                         }
@@ -405,6 +413,7 @@ Rating Component
                         svg {
                             fill: $color-ok-rating;
                         }
+
                         i {
                             color: $color-ok-rating;
                         }
@@ -413,6 +422,7 @@ Rating Component
                         svg {
                             fill: $color-positive-rating;
                         }
+
                         i {
                             color: $color-positive-rating;
                         }
@@ -420,13 +430,15 @@ Rating Component
                 }
             }
         }
-    } //Handling values > $maxNumOfStars up to $maxNumOfStars*2 (i know it's ugly. Maybe i will skip this completely)
+    }
+    //Handling values > $maxNumOfStars up to $maxNumOfStars*2 (i know it's ugly. Maybe i will skip this completely)
     @for $i from $maxNumOfStars through $maxNumOfStars*2 {
         &.value-#{$i} {
             .star-container {
                 .star:nth-child(-n+#{$i}) {
-                    @extend .star.filled;
+                    @extend .star, .filled;
                 }
+
                 .star {
                     @extend .positive;
                 }
@@ -439,22 +451,24 @@ Rating Component
     //- filled stars after the hover star should be empty
     &.hover:hover {
         @for $i from $minRatingValue through $maxNumOfStars {
-            &.value-#{$i}.half,
-            &.hover-#{$i} {
+            &.hover-#{$i},
+            &.value-#{$i}.half {
                 .star-container {
                     .star {
                         @extend .empty;
                     }
                 }
             }
+
             &.hover-#{$i} {
                 .star-container {
                     .star:nth-child(-n+#{$i}) {
                         @extend .filled;
                     }
+
                     .star {
                         @if $i <= $fractionSize {
-                            @extend .star.negative;
+                            @extend .star, .negative;
                         }
                         @if $i == $fractionSize*1.2 {
                             @extend .ok;
@@ -474,6 +488,7 @@ Rating Component
         .star {
             @extend .negative;
         }
+
         .star:nth-child(1) {
             @extend .half;
         }
@@ -496,6 +511,7 @@ Rating Component
             display: none;
         }
     }
+
     &.label-visible {
         display: flex;
     }
@@ -503,6 +519,7 @@ Rating Component
   ====================================================*/
     &.label-top {
         flex-direction: column;
+
         .label-value {
             +.star-container {
                 margin-left: 0;
@@ -511,15 +528,19 @@ Rating Component
             }
         }
     }
+
     &.label-left .label-value {
         flex: 0 0 auto;
+
         +.star-container {
             margin-left: $default-stars-label-margin;
             margin-right: 0;
         }
     }
+
     &.label-right {
         flex-direction: row-reverse;
+
         .label-value {
             +.star-container {
                 margin-left: 0;
@@ -527,8 +548,10 @@ Rating Component
             }
         }
     }
+
     &.label-bottom {
         flex-direction: column-reverse;
+
         .label-value {
             +.star-container {
                 margin-left: 0;
@@ -542,68 +565,80 @@ Rating Component
   ===================================================*/
     &.direction-rtl {
         direction: rtl;
+
         .star-container {
-            @extend .star-container.direction-rtl;
+            @extend .star-container, .direction-rtl;
+
             .star {
-                @extend .star.direction-rtl;
+                @extend .star, .direction-rtl;
             }
         }
     }
+
     &.direction-ltr {
         direction: ltr;
     }
     /* Star Type
   ====================================================*/
     &.star-icon {
-        @extend .star.icon;
+        @extend .star, .icon;
     }
+
     &.star-custom-icon {
-        @extend .star.custom-icon;
+        @extend .star, .custom-icon;
     }
+
     &.star-svg {
-        @extend .star.svg;
+        @extend .star, .svg;
     }
     /* Sizes
   ==========================================================*/
     &.small {
         .star {
-            @extend .star.small;
+            @extend .star, .small;
         }
+
         .label-value {
-            @extend .label-value.small;
+            @extend .label-value, .small;
         }
     }
+
     &.medium {
         .star {
-            @extend .star.medium;
+            @extend .star, .medium;
         }
+
         .label-value {
-            @extend .label-value.medium;
+            @extend .label-value, .medium;
         }
     }
+
     &.large {
         .star {
-            @extend .star.large;
+            @extend .star, .large;
         }
+
         .label-value {
-            @extend .label-value.large;
+            @extend .label-value, .large;
         }
     }
     /* Space
   ====================================================*/
     &.space-no {
         .star-container {
-            @extend .star-container.space-no;
+            @extend .star-container, .space-no;
         }
     }
+
     &.space-between {
         .star-container {
-            @extend .star-container.space-between;
+            @extend .star-container, .space-between;
         }
     }
+
     &.space-around {
         .star-container {
-            @extend .star-container.space-around;
+            @extend .star-container, .space-around;
         }
     }
     /* Static Color
@@ -612,46 +647,61 @@ Rating Component
         .star-container {
             .star {
                 svg {
-                    fill: $color-default-rating //!important;
+                    //!important;
+                    fill: $color-default-rating;
                 }
+
                 i {
-                    color: $color-default-rating //!important;
+                    //!important;
+                    color: $color-default-rating;
                 }
             }
         }
     }
+
     &.color-ok {
         .star-container {
             .star {
                 svg {
-                    fill: $color-ok-rating //!important;
+                    //!important;
+                    fill: $color-ok-rating;
                 }
+
                 i {
-                    color: $color-ok-rating //!important;
+                    //!important;
+                    color: $color-ok-rating;
                 }
             }
         }
     }
+
     &.color-positive {
         .star-container {
             .star {
                 svg {
-                    fill: $color-positive-rating //!important;
+                    //!important;
+                    fill: $color-positive-rating;
                 }
+
                 i {
-                    color: $color-positive-rating //!important;
+                    //!important;
+                    color: $color-positive-rating;
                 }
             }
         }
     }
+
     &.color-negative {
         .star-container {
             .star {
                 svg {
-                    fill: $color-negative-rating //!important;
+                    //!important;
+                    fill: $color-negative-rating;
                 }
+
                 i {
-                    color: $color-negative-rating //!important;
+                    //!important;
+                    color: $color-negative-rating;
                 }
             }
         }
@@ -660,11 +710,12 @@ Rating Component
   ====================================================*/
     &.disabled {
         .label-value {
-            @extend .label-value.disabled;
+            @extend .label-value, .disabled;
         }
+
         .star-container {
             .star {
-                @extend .star.disabled;
+                @extend .star, .disabled;
             }
         }
     }
@@ -672,33 +723,41 @@ Rating Component
  ====================================================*/
     &.immediately .star-container {
         transition: all $immediately-animation-type;
+
         .star {
             transition: $immediately-animation-type;
-            svg,
-            i {
+
+            i,
+            svg {
                 transition: $immediately-animation-type;
             }
         }
     }
+
     &.noticeable {
         .star-container {
             transition: all $default-animation-speed $default-animation-type;
+
             .star {
                 transition: all $default-animation-speed $default-animation-type;
-                svg,
-                i {
+
+                i,
+                svg {
                     transition: all $default-animation-speed $default-animation-type;
                 }
             }
         }
     }
+
     &.slow {
         .star-container {
             transition: all $slow-animation-speed $default-animation-type;
+
             .star {
                 transition: all $slow-animation-speed $default-animation-type;
-                svg,
-                i {
+
+                i,
+                svg {
                     transition: all $slow-animation-speed $default-animation-type;
                 }
             }
